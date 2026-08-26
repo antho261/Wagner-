@@ -1,0 +1,298 @@
+/* =========================================
+   FJKM Wagner – Finoana Paris
+   Responsive partagé — chargé APRÈS le CSS
+   de chaque page (mobile / tablette / iPad / PC)
+   =========================================
+   Breakpoints :
+   ≤ 480px   petits téléphones
+   ≤ 767px   téléphones
+   ≤ 1023px  tablettes portrait (iPad 768px inclus)
+   1024–1200 tablettes paysage / petits laptops
+   ========================================= */
+
+/* ── Garde-fous globaux ── */
+img, svg, video, iframe {
+  max-width: 100%;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ═══════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════ */
+
+/* Petits laptops / iPad paysage : nav resserrée
+   (6 liens + logo débordent sous ~1200px sinon) */
+@media (max-width: 1200px) {
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 12px; letter-spacing: 1px; }
+  .nav-cta { padding: 9px 18px; }
+}
+
+/* Tablette portrait & mobile : menu hamburger unifié
+   (certaines pages basculaient à 767px, d'autres à 768px,
+   et la nav desktop était écrasée entre 769 et 1023px) */
+@media (max-width: 1023px) {
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+}
+
+/* Cible tactile confortable (≥ 44px) pour le hamburger */
+.hamburger { padding: 10px; margin-right: -10px; }
+
+/* Menu mobile : scrollable + zones sûres iPhone */
+.mobile-menu {
+  overflow-y: auto;
+  padding-top: calc(72px + env(safe-area-inset-top));
+  padding-bottom: calc(40px + env(safe-area-inset-bottom));
+}
+.mobile-close {
+  padding: 10px;
+  top: calc(14px + env(safe-area-inset-top));
+}
+
+/* Téléphone en paysage : liens plus compacts pour tout voir */
+@media (max-height: 500px) {
+  .mobile-menu { gap: 18px; justify-content: flex-start; }
+  .mobile-menu a { font-size: 22px; }
+}
+
+/* Encoche iPhone : la nav suit les zones sûres */
+nav {
+  padding-left: max(5%, env(safe-area-inset-left));
+  padding-right: max(5%, env(safe-area-inset-right));
+}
+
+/* ═══════════════════════════════════════════
+   HÉROS
+   ═══════════════════════════════════════════ */
+
+/* (Les hauteurs de héros sont réduites dans le bloc
+   mobile ci-dessous, en unités svh — la barre d'adresse
+   iOS/Android fausse les vh classiques.) */
+
+/* ═══════════════════════════════════════════
+   TABLETTE PORTRAIT (768–1023px)
+   ═══════════════════════════════════════════ */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* 3 colonnes trop écrasées sur iPad portrait ;
+     1 colonne gaspille la largeur → 2 colonnes */
+  .features-grid  { grid-template-columns: repeat(2, 1fr); }
+  .perikopa-grid  { grid-template-columns: repeat(2, 1fr); }
+  .cards-grid     { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid   { grid-template-columns: repeat(2, 1fr); }
+  .s-info-grid    { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .feature-card   { padding: 36px; }
+}
+
+/* Galerie : hauteurs de rangées maîtrisées dès que la
+   grille passe en auto (le CSS d'origine laissait les
+   images imposer des hauteurs très inégales) */
+@media (max-width: 1024px) {
+  .gallery-grid { grid-auto-rows: 260px; }
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE (≤ 767px) — layout DENSE
+   Objectif : réduire fortement la hauteur de
+   page (moins de scroll sur iPhone / Galaxy)
+   ═══════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  /* ── Héros raccourcis : on aperçoit le contenu suivant ── */
+  #hero:has(.hero-scroll) { min-height: 72vh; min-height: 72svh; }
+  .hero-scroll { display: none; }
+  .hero-eyebrow { margin-bottom: 16px; }
+  .hero-subtitle { font-size: 15px; margin-bottom: 28px; }
+  .hero-actions { gap: 10px; }
+  .btn-primary, .btn-outline { padding: 13px 28px; }
+
+  /* Héros des sous-pages nettement plus courts */
+  #hero.s-hero { min-height: 40svh; }
+
+  /* ── Respiration verticale réduite partout ── */
+  #event, #gallery, #sections-news, #features, #perikopa { padding: 48px 5%; }
+  #s-about, #s-activities, #s-listing, #s-info { padding: 48px 5%; }
+  #s-cta { padding: 56px 5%; }
+  #histoire, #archives { padding: 48px 5%; }
+  #bureau { padding: 56px 0 48px; }
+  #bureau .section-intro { margin-bottom: 28px; }
+  #upcoming, #acces { padding: 48px 6%; }
+  #contact-form-section { padding: 48px 5%; }
+  #contact-info { padding: 48px 5%; }
+
+  .section-label { margin-bottom: 12px; }
+  .section-heading { font-size: 32px; }
+  .gallery-header { margin-bottom: 24px; gap: 16px; }
+  .sections-news-header { margin-bottom: 24px; }
+  .features-grid, .perikopa-grid { margin-top: 24px; gap: 14px; }
+  .s-act-grid, .s-list-grid { margin-top: 24px; gap: 14px; }
+
+  /* ── Événement : image plafonnée, texte resserré ── */
+  #event { gap: 36px; }
+  .event-image-frame img { height: 240px; width: 100%; object-fit: cover; }
+  .event-desc { margin-bottom: 24px; font-size: 15px; }
+
+  /* ── Galerie : mosaïque 2 colonnes au lieu d'une pile ── */
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 150px;
+    gap: 10px;
+  }
+  .gallery-item:first-child { grid-column: span 2; grid-row: span 1; }
+
+  /* ── Cartes sections : 2 colonnes compactes ── */
+  .cards-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .card { height: 210px; }
+  .card-content { padding: 14px; transform: none; }
+  .card-tag { font-size: 8.5px; letter-spacing: 2px; margin-bottom: 4px; }
+  .card-title { font-size: 15px; line-height: 1.25; }
+
+  /* ── Feature cards compactes ── */
+  .feature-card { padding: 22px 20px; }
+  .feature-icon { width: 44px; height: 44px; font-size: 18px; margin-bottom: 14px; border-radius: 10px; }
+  .feature-title { font-size: 21px; margin-bottom: 8px; }
+  .feature-text { font-size: 14px; line-height: 1.65; }
+
+  /* ── Perikopa compact ── */
+  .perikopa-card { padding: 22px 20px; }
+  .perikopa-tag { margin-bottom: 10px; }
+  .perikopa-title { font-size: 19px; margin-bottom: 12px; }
+  .perikopa-refs { gap: 5px; margin-bottom: 14px; }
+  .perikopa-date { padding-top: 12px; }
+
+  /* ── Pages sections (sampana) ── */
+  .s-about-text { font-size: 15px; line-height: 1.75; margin-top: 18px; }
+  .s-act-card { padding: 24px 20px; }
+  .s-act-icon { width: 44px; height: 44px; font-size: 18px; margin-bottom: 14px; }
+  .s-act-title { font-size: 20px; margin-bottom: 8px; }
+  .s-list-card { height: 230px; }
+  .s-info-grid { gap: 12px; }
+  .s-info-item { padding: 22px 14px; gap: 8px; }
+  .s-cta-sub { margin-bottom: 28px; }
+
+  /* ── Contact : formulaire resserré ── */
+  .cf-container { gap: 36px; }
+  .cf-step-label { margin-bottom: 16px; }
+  .cf-recipients { gap: 8px; }
+  .cf-recipient { padding: 12px 10px; gap: 8px; }
+  .cf-rec-icon { width: 36px; height: 36px; font-size: 16px; }
+  .cf-fields { gap: 14px; }
+  .cf-field-group { gap: 14px; }
+  .cf-field input, .cf-field textarea { padding: 12px 14px; }
+  .cf-field textarea { min-height: 120px; }
+  .cf-btn { width: 100%; justify-content: center; }
+  .ci-grid { gap: 12px; }
+  .ci-item { padding: 22px 14px; gap: 8px; }
+
+  /* ── Toerana ── */
+  .upcoming-inner { gap: 28px; }
+  .acces-inner { gap: 28px; }
+  .upcoming-img-wrap { aspect-ratio: 16/10; }
+  #fjkmMap { height: 300px; }
+
+  /* ── Pages légales : sommaire en chips, texte resserré ── */
+  .page-body { padding: 40px 5% 56px; }
+  .sidebar { margin-bottom: 24px; padding-bottom: 20px; }
+  .sidebar-nav { display: flex; flex-wrap: wrap; gap: 6px; }
+  .sidebar-nav li + li { margin-top: 0; }
+  .sidebar-nav a {
+    border: 1px solid rgba(201,169,110,.3);
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  .sidebar-nav a::before { display: none; }
+  .section-block { margin-bottom: 36px; }
+  .section-block .section-heading {
+    font-size: 24px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+  }
+  .content p { line-height: 1.7; margin-bottom: 12px; }
+  .content ul { margin: 12px 0 14px; }
+
+  /* ── Footer : liens sur 2 colonnes, tout resserré ── */
+  footer { padding: 40px 5% 24px; }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+    margin-bottom: 24px;
+  }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-heading { margin-bottom: 12px; }
+  .footer-links { gap: 8px; }
+  .footer-links a { font-size: 13px; }
+  .footer-contact-item { margin-bottom: 10px; gap: 10px; }
+  .footer-contact-icon { width: 30px; height: 30px; font-size: 13px; }
+  .footer-contact-text { padding-top: 5px; font-size: 12px; }
+  .footer-bottom { padding-top: 18px; gap: 10px; }
+  /* Toerana : même traitement pour son footer */
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+  .footer-inner .footer-brand { grid-column: 1 / -1; }
+
+  /* ── Boutons flottants : ne pas gêner le pouce ni l'encoche ── */
+  #backtotop {
+    bottom: calc(20px + env(safe-area-inset-bottom));
+    right: calc(20px + env(safe-area-inset-right));
+  }
+  #floatingControls {
+    bottom: calc(76px + env(safe-area-inset-bottom));
+    right: calc(16px + env(safe-area-inset-right));
+  }
+}
+
+/* ═══════════════════════════════════════════
+   PETITS TÉLÉPHONES (≤ 480px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 480px) {
+  /* Boutons d'action en pleine largeur, empilés */
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-outline { text-align: center; }
+  .s-cta-actions { flex-direction: column; align-items: stretch; }
+  .s-cta-actions .btn-gold,
+  .s-cta-actions .btn-ghost { text-align: center; }
+
+  .hero-title { font-size: 38px; }
+  .section-heading { font-size: 30px; }
+
+  .gallery-grid { grid-auto-rows: 130px; gap: 8px; }
+  .card { height: 190px; }
+
+  /* Toerana : très grand em du titre réduit */
+  .hero-title em { font-size: 52px; }
+  #fjkmMap { height: 260px; }
+
+  /* Pages légales : tableau d'identité plus étroit */
+  .data-table td:first-child { width: 110px; }
+  .data-table td { word-break: break-word; }
+
+  /* Cartes contact empilées */
+  .ci-grid { grid-template-columns: 1fr; }
+
+  /* Footer : icônes sociales centrées avec la pile */
+  .page-footer-links { flex-wrap: wrap; justify-content: center; }
+}
+
+/* ═══════════════════════════════════════════
+   TRÈS PETITS ÉCRANS (≤ 360px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 360px) {
+  .hero-title { font-size: 34px; }
+  .logo-text span:first-child { font-size: 15px; }
+  .lang-btn, .theme-btn { padding: 5px 8px; }
+}
+
+/* ═══════════════════════════════════════════
+   ACCESSIBILITÉ — mouvement réduit
+   ═══════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-bg { animation: none; }
+  #langPanel::before, #themePanel::before,
+  .lg-switcher::before { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}

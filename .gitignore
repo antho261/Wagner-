@@ -1,0 +1,18 @@
+# Système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+*~
+
+# Outillage local (config de serveur de prévisualisation)
+.claude/
+
+# Sauvegardes
+*.bak
+*.tmp
+*.orig

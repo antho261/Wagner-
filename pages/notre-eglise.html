@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Découvrez l'histoire et la communauté de l'église FJKM Wagner Paris." />
+  <title>Notre Église – FJKM Wagner Paris</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C9A96E'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' text-anchor='middle' fill='%230D1117'%3EF%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/notre-eglise.css?v=2" />
+  <link rel="stylesheet" href="../assets/css/responsive.css?v=2" />
+  <link rel="stylesheet" href="../assets/css/theme.css?v=2" />
+  <link rel="stylesheet" href="../assets/css/mobile-nav.css?v=2" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="../index.html" class="logo">
+    <div class="logo-mark">F</div>
+    <div class="logo-text">
+      <span>FJKM Wagner</span>
+      <span>Finoana Paris</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html" data-fr="Accueil" data-en="Home" data-mg="Fandraisana">Accueil</a></li>
+    <li><a href="notre-eglise.html" class="nav-active" data-fr="Notre Église" data-en="Our Church" data-mg="Fiangonana">Notre Église</a></li>
+    <li><a href="../index.html#perikopa" data-fr="Pain du Jour" data-en="Daily Bread" data-mg="Mofo isan'andro">Pain du Jour</a></li>
+    <li><a href="sections.html" data-fr="Section" data-en="Groups" data-mg="Sampana">Section</a></li>
+    <li><a href="toerana.html" data-fr="Lieu de Culte" data-en="Worship Place" data-mg="Toerana Fivavahana">Lieu de Culte</a></li>
+    <li><a href="contact.html" class="nav-cta" data-fr="Contact" data-en="Contact" data-mg="Fifandraisana">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="../index.html" onclick="closeMobile()" data-fr="Accueil" data-en="Home" data-mg="Fandraisana">Accueil</a>
+  <a href="notre-eglise.html" onclick="closeMobile()" data-fr="Notre Église" data-en="Our Church" data-mg="Fiangonana">Notre Église</a>
+  <a href="../index.html#perikopa" onclick="closeMobile()" data-fr="Pain du Jour" data-en="Daily Bread" data-mg="Mofo isan'andro">Pain du Jour</a>
+  <a href="sections.html" onclick="closeMobile()" data-fr="Section" data-en="Groups" data-mg="Sampana">Section</a>
+  <a href="toerana.html" onclick="closeMobile()" data-fr="Lieu de Culte" data-en="Worship Place" data-mg="Toerana Fivavahana">Lieu de Culte</a>
+  <a href="contact.html" onclick="closeMobile()" data-fr="Contact" data-en="Contact" data-mg="Fifandraisana">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" data-photo-key="eglise-hero"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span data-fr="Ny Fiangonana" data-en="Our Church" data-mg="Ny Fiangonana">Ny Fiangonana</span>
+    </div>
+    <h1 class="hero-title">
+      FJKM <em>Wagner</em><br>
+      <strong>Paris</strong>
+    </h1>
+    <p class="hero-subtitle">
+      <span data-fr="Une communauté chrétienne malgache enracinée dans la foi, portée par l'amour et unie dans l'espérance depuis de nombreuses années au cœur de Paris." data-en="A Malagasy Christian community rooted in faith, carried by love and united in hope for many years in the heart of Paris." data-mg="Fiangonana kristiana Malagasy miorina amin'ny finoana, ampiombonan'ny fitiavana ary miray amin'ny fanantenana nandritra ny taona maro ao Paris.">Une communauté chrétienne malgache enracinée dans la foi, portée par l'amour et unie dans l'espérance depuis de nombreuses années au cœur de Paris.</span>
+    </p>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span data-fr="Découvrir" data-en="Discover" data-mg="Hahita">Découvrir</span>
+  </div>
+</section>
+
+<!-- HISTOIRE : NY TANTARANANY -->
+<section id="histoire">
+  <div class="section-intro">
+    <div class="section-label">
+      <div class="section-label-line"></div>
+      <span data-fr="Notre Histoire" data-en="Our History" data-mg="Ny tantara">Notre Histoire</span>
+    </div>
+    <h2 class="section-heading" data-fr="NY TANTARANANY" data-en="OUR HISTORY" data-mg="NY TANTARANANY">NY TANTARANANY</h2>
+  </div>
+
+  <div class="h-timeline">
+    <!-- Ligne horizontale animée -->
+    <div class="h-steps" id="hSteps">
+      <div class="h-spine"><div class="h-spine-fill" id="hFill"></div></div>
+
+      <!-- Étape 1 -->
+      <div class="h-step">
+        <div class="h-node"><span>01</span><div class="h-ring"></div></div>
+        <div class="h-connector"></div>
+        <div class="h-card">
+          <div class="h-card-img"><img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=600&q=80" alt="Le Commencement" data-photo-key="eglise-histoire-1" /></div>
+          <div class="h-card-body">
+            <div class="h-era" data-fr="Origines" data-en="Origins" data-mg="Fiandohana">Origines</div>
+            <h3 data-fr="Le Commencement" data-en="The Beginning" data-mg="Ny Fiandohana">Le Commencement</h3>
+            <p data-fr="Les premières familles malgaches à Paris posent les bases de la communauté FJKM Wagner, unies dans la foi et le désir de célébrer Dieu dans leur langue." data-en="The first Malagasy families in Paris lay the foundations of the FJKM Wagner community, united in faith and the desire to worship God in their language." data-mg="Ireo fianakaviana Malagasy voalohany tao Paris no nanorina ny fototra ny FJKM Wagner, miray amin'ny finoana sy ny faniriana hivavaka amin'ny fiteniny.">Les premières familles malgaches à Paris posent les bases de la communauté FJKM Wagner, unies dans la foi et le désir de célébrer Dieu dans leur langue.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 2 -->
+      <div class="h-step">
+        <div class="h-node"><span>02</span><div class="h-ring"></div></div>
+        <div class="h-connector"></div>
+        <div class="h-card">
+          <div class="h-card-img"><img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=600&q=80" alt="Pasteur Max" data-photo-key="eglise-histoire-2" /></div>
+          <div class="h-card-body">
+            <div class="h-era" data-fr="Fondation" data-en="Foundation" data-mg="Fananganana">Fondation</div>
+            <h3 data-fr="Pasteur Max" data-en="Pastor Max" data-mg="Pasteur Max">Pasteur Max</h3>
+            <p data-fr="Sous le Pasteur Max, l'église se structure et grandit spirituellement. Sa vision pastorale façonne l'identité profonde de la communauté FJKM Wagner Paris." data-en="Under Pastor Max, the church takes shape and grows spiritually. His pastoral vision shapes the deep identity of the FJKM Wagner Paris community." data-mg="Tao ambany Pasteur Max, ny fiangonana dia mirafitra sy mitombo ara-panahy. Ny fahitany ara-pastoraly no nanarafina ny mombamomba ny FJKM Wagner Paris.">Sous le Pasteur Max, l'église se structure et grandit spirituellement. Sa vision pastorale façonne l'identité profonde de la communauté FJKM Wagner Paris.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 3 -->
+      <div class="h-step">
+        <div class="h-node"><span>03</span><div class="h-ring"></div></div>
+        <div class="h-connector"></div>
+        <div class="h-card">
+          <div class="h-card-img"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80" alt="Paris" data-photo-key="eglise-histoire-3" /></div>
+          <div class="h-card-body">
+            <div class="h-era" data-fr="Expansion" data-en="Expansion" data-mg="Fitomboana">Expansion</div>
+            <h3 data-fr="FJKM en France" data-en="FJKM in France" data-mg="Ny FJKM teto Frantsa">FJKM en France</h3>
+            <p data-fr="La FJKM s'implante sur le sol français. Paris devient le centre rayonnant de la diaspora spirituelle malgache en Europe." data-en="The FJKM establishes itself on French soil. Paris becomes the vibrant center of the Malagasy spiritual diaspora in Europe." data-mg="Ny FJKM dia miorina eto Frantsa. Paris dia tonga ivon'ny diaspora ara-panahy Malagasy eto Eropa.">La FJKM s'implante sur le sol français. Paris devient le centre rayonnant de la diaspora spirituelle malgache en Europe.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 4 -->
+      <div class="h-step">
+        <div class="h-node"><span>04</span><div class="h-ring"></div></div>
+        <div class="h-connector"></div>
+        <div class="h-card">
+          <div class="h-card-img"><img src="https://images.unsplash.com/photo-1513883049090-d0b7439799bf?w=600&q=80" alt="Pasteur Yves Raholiarson" data-photo-key="eglise-histoire-4" /></div>
+          <div class="h-card-body">
+            <div class="h-era" data-fr="Aujourd'hui" data-en="Today" data-mg="Ankehitriny">Aujourd'hui</div>
+            <h3 data-fr="Pasteur Yves" data-en="Pastor Yves" data-mg="Pasteur Yves">Pasteur Yves</h3>
+            <p data-fr="Yves Raholiarson poursuit l'œuvre avec ferveur. Unité, évangélisation et formation des fidèles au cœur d'une église en pleine croissance." data-en="Yves Raholiarson continues the work with fervor. Unity, evangelism and formation of the faithful at the heart of a growing church." data-mg="Yves Raholiarson dia mitohy ny asa amim-pahasahiana. Firaisana, filazantsara ary fanabeazana ny mpino ao amin'ny fiangonana mitombo.">Yves Raholiarson poursuit l'œuvre avec ferveur. Unité, évangélisation et formation des fidèles au cœur d'une église en pleine croissance.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ARCHIVES PHOTOS -->
+<section id="archives">
+  <div class="section-intro reveal">
+    <div class="section-label">
+      <div class="section-label-line"></div>
+      <span data-fr="Archives" data-en="Archives" data-mg="Tahiry sary">Archives</span>
+    </div>
+    <h2 class="section-heading" data-fr="PHOTOS DE L'ÉGLISE" data-en="CHURCH PHOTOS" data-mg="SARY NY FIANGONANA">PHOTOS DE L'ÉGLISE</h2>
+  </div>
+
+  <!-- Filtres -->
+  <div class="archive-filters reveal">
+    <button class="af-btn active" data-filter="all" data-fr="Tout" data-en="All" data-mg="Rehetra">Tout</button>
+    <button class="af-btn" data-filter="culte" data-fr="Cultes" data-en="Services" data-mg="Fanompoana">Cultes</button>
+    <button class="af-btn" data-filter="event" data-fr="Événements" data-en="Events" data-mg="Hetsika">Événements</button>
+    <button class="af-btn" data-filter="section" data-fr="Sections" data-en="Groups" data-mg="Sampana">Sections</button>
+  </div>
+
+  <!-- Grille photos -->
+  <div class="archive-grid">
+    <div class="archive-photo ap-wide reveal" data-cat="culte">
+      <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=800&q=80" alt="Culte du dimanche" data-photo-key="eglise-archive-1" />
+      <div class="archive-overlay"><span data-fr="Culte du dimanche" data-en="Sunday service" data-mg="Fanompoam-pivavahana Alahady">Culte du dimanche</span></div>
+    </div>
+    <div class="archive-photo reveal reveal-delay-1" data-cat="event">
+      <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500&q=80" alt="Événement" data-photo-key="eglise-archive-2" />
+      <div class="archive-overlay"><span data-fr="Événements communautaires" data-en="Community events" data-mg="Hetsika iombonana">Événements</span></div>
+    </div>
+    <div class="archive-photo reveal" data-cat="section">
+      <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?w=500&q=80" alt="Sermons" data-photo-key="eglise-archive-3" />
+      <div class="archive-overlay"><span data-fr="Prédications" data-en="Sermons" data-mg="Toriteny">Prédications</span></div>
+    </div>
+    <div class="archive-photo ap-wide reveal reveal-delay-1" data-cat="section">
+      <img src="https://images.unsplash.com/photo-1560785496-3c9d27877182?w=800&q=80" alt="Chorale" data-photo-key="eglise-archive-4" />
+      <div class="archive-overlay"><span data-fr="Chorale & Louange" data-en="Choir & Praise" data-mg="Antoko Mpihira">Chorale &amp; Louange</span></div>
+    </div>
+    <div class="archive-photo reveal reveal-delay-2" data-cat="culte">
+      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=500&q=80" alt="Jeunesse" data-photo-key="eglise-archive-5" />
+      <div class="archive-overlay"><span data-fr="Groupe jeunesse" data-en="Youth group" data-mg="Vondron'ny tanora">Groupe jeunesse</span></div>
+    </div>
+    <div class="archive-photo reveal reveal-delay-1" data-cat="event">
+      <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=500&q=80" alt="Prière" data-photo-key="eglise-archive-6" />
+      <div class="archive-overlay"><span data-fr="Temps de prière" data-en="Prayer time" data-mg="Fotoam-pivavahana">Temps de prière</span></div>
+    </div>
+    <div class="archive-photo reveal reveal-delay-2" data-cat="culte">
+      <img src="https://images.unsplash.com/photo-1445855743215-296f71d4b49c?w=500&q=80" alt="Communauté" data-photo-key="eglise-archive-7" />
+      <div class="archive-overlay"><span data-fr="Vie communautaire" data-en="Community life" data-mg="Fiainam-piangonana">Vie communautaire</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBRES DU BUREAU -->
+<section id="bureau">
+  <div class="section-intro reveal" style="padding:0 5%">
+    <div class="section-label">
+      <div class="section-label-line"></div>
+      <span data-fr="Membres" data-en="Members" data-mg="Mpikambana">Membres</span>
+    </div>
+    <h2 class="section-heading" data-fr="MEMBRE DU BUREAU" data-en="BOARD MEMBERS" data-mg="MPIKAMBANA ANY AN'NY BIRAO">MEMBRE DU BUREAU</h2>
+  </div>
+
+  <div class="bc-stage">
+    <div class="bc-carousel" id="bcCarousel">
+
+      <!-- Card 0 — Yves Raholiarson / Pasteur -->
+      <div class="bc-card" data-index="0">
+        <div class="bc-top">
+          <div class="bc-icons-left">
+            <a href="https://www.linkedin.com/in/fjkmwagnerparis" class="bc-icon" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://www.instagram.com/fjkmwagnerparis" class="bc-icon" title="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path fill="none" stroke="currentColor" stroke-width="2" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line fill="none" stroke="currentColor" stroke-width="2" x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+          <a href="mailto:pinelanthony@outlook.fr" class="bc-icon" title="Email">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+          </a>
+        </div>
+        <div class="bc-avatar">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" alt="Yves Raholiarson" data-photo-key="eglise-bureau-1" />
+        </div>
+        <div class="bc-name">Yves Raholiarson</div>
+        <div class="bc-role" data-fr="Pasteur" data-en="Pastor" data-mg="Pasteur">Pasteur</div>
+        <p class="bc-desc" data-fr="Berger spirituel de la communauté FJKM Wagner Paris." data-en="Spiritual shepherd of the FJKM Wagner Paris community." data-mg="Mpiandry ara-panahy ny FJKM Wagner Paris.">Berger spirituel de la communauté FJKM Wagner Paris.</p>
+        <div class="bc-footer"><span class="bc-tag">FJKM Wagner</span></div>
+      </div>
+
+      <!-- Card 1 — Lanto / Secrétaire -->
+      <div class="bc-card" data-index="1">
+        <div class="bc-top">
+          <div class="bc-icons-left">
+            <a href="https://www.linkedin.com/in/fjkmwagnerparis" class="bc-icon" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://www.instagram.com/fjkmwagnerparis" class="bc-icon" title="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path fill="none" stroke="currentColor" stroke-width="2" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line fill="none" stroke="currentColor" stroke-width="2" x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+          <a href="mailto:toxdago@live.fr" class="bc-icon" title="Email">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+          </a>
+        </div>
+        <div class="bc-avatar">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=80" alt="Lanto" data-photo-key="eglise-bureau-2" />
+        </div>
+        <div class="bc-name">Lanto</div>
+        <div class="bc-role" data-fr="Secrétaire" data-en="Secretary" data-mg="Sekretera">Secrétaire</div>
+        <p class="bc-desc" data-fr="Coordination administrative et communication de l'église." data-en="Administrative coordination and church communication." data-mg="Fitantanana ara-pitantanana sy fifandraisana ny fiangonana.">Coordination administrative et communication de l'église.</p>
+        <div class="bc-footer"><span class="bc-tag">FJKM Wagner</span></div>
+      </div>
+
+      <!-- Card 2 — Trésorier (center / default active) -->
+      <div class="bc-card" data-index="2">
+        <div class="bc-top">
+          <div class="bc-icons-left">
+            <a href="https://www.linkedin.com/in/fjkmwagnerparis" class="bc-icon" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://www.instagram.com/fjkmwagnerparis" class="bc-icon" title="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path fill="none" stroke="currentColor" stroke-width="2" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line fill="none" stroke="currentColor" stroke-width="2" x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+          <a href="mailto:toxdago@live.fr" class="bc-icon" title="Email">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+          </a>
+        </div>
+        <div class="bc-avatar">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&q=80" alt="Rakoto Jean" data-photo-key="eglise-bureau-3" />
+        </div>
+        <div class="bc-name">Rakoto Jean</div>
+        <div class="bc-role" data-fr="Trésorier" data-en="Treasurer" data-mg="Mpitahiry harena">Trésorier</div>
+        <p class="bc-desc" data-fr="Gestion financière et transparence au service de la communauté." data-en="Financial management at the service of the community." data-mg="Fitantanana ara-bola ho an'ny fiangonana.">Gestion financière et transparence au service de la communauté.</p>
+        <div class="bc-footer"><span class="bc-tag">FJKM Wagner</span></div>
+      </div>
+
+      <!-- Card 3 — Santos Payne / Pasteur Church -->
+      <div class="bc-card" data-index="3">
+        <div class="bc-top">
+          <div class="bc-icons-left">
+            <a href="https://www.linkedin.com/in/fjkmwagnerparis" class="bc-icon" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://www.instagram.com/fjkmwagnerparis" class="bc-icon" title="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path fill="none" stroke="currentColor" stroke-width="2" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line fill="none" stroke="currentColor" stroke-width="2" x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+          <a href="mailto:toxdago@live.fr" class="bc-icon" title="Email">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+          </a>
+        </div>
+        <div class="bc-avatar">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&q=80" alt="Santos Payne" data-photo-key="eglise-bureau-4" />
+        </div>
+        <div class="bc-name">Santos Payne</div>
+        <div class="bc-role" data-fr="Pasteur Church" data-en="Pastor Church" data-mg="Pasteur Church">Pasteur Church</div>
+        <p class="bc-desc" data-fr="Accompagnement pastoral et animation spirituelle des fidèles." data-en="Pastoral accompaniment and spiritual facilitation." data-mg="Fanohanan-pastoraly sy famelombelomana ara-panahy.">Accompagnement pastoral et animation spirituelle des fidèles.</p>
+        <div class="bc-footer"><span class="bc-tag">FJKM Wagner</span></div>
+      </div>
+
+      <!-- Card 4 — Jean-Pierre / Diacre -->
+      <div class="bc-card" data-index="4">
+        <div class="bc-top">
+          <div class="bc-icons-left">
+            <a href="https://www.linkedin.com/in/fjkmwagnerparis" class="bc-icon" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://www.instagram.com/fjkmwagnerparis" class="bc-icon" title="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path fill="none" stroke="currentColor" stroke-width="2" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line fill="none" stroke="currentColor" stroke-width="2" x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+          <a href="mailto:toxdago@live.fr" class="bc-icon" title="Email">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+          </a>
+        </div>
+        <div class="bc-avatar">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80" alt="Jean-Pierre" data-photo-key="eglise-bureau-5" />
+        </div>
+        <div class="bc-name">Jean-Pierre</div>
+        <div class="bc-role" data-fr="Diacre" data-en="Deacon" data-mg="Diakona">Diacre</div>
+        <p class="bc-desc" data-fr="Service diaconal et soutien aux membres dans le besoin." data-en="Diaconal service and support for members in need." data-mg="Fanompoam-diakona sy fanampiana ny mpikambana sahirana.">Service diaconal et soutien aux membres dans le besoin.</p>
+        <div class="bc-footer"><span class="bc-tag">FJKM Wagner</span></div>
+      </div>
+
+    </div>
+    <div class="bc-dots" id="bcDots"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo" style="margin-bottom:24px">
+        <div class="logo-mark">F</div>
+        <div class="logo-text">
+          <span>FJKM Wagner</span>
+          <span>Finoana Paris</span>
+        </div>
+      </div>
+      <p><span data-fr="Communauté chrétienne malgache à Paris, unie dans la foi, l'amour et l'espérance depuis de nombreuses années." data-en="Malagasy Christian community in Paris, united in faith, love, and hope for many years." data-mg="Fiangonana kristiana Malagasy ao Paris, miray amin'ny finoana, fitiavana ary fanantenana nandritra ny taona maro.">Communauté chrétienne malgache à Paris, unie dans la foi, l'amour et l'espérance depuis de nombreuses années.</span></p>
+      <p style="margin-top:8px" data-fr="© 2026 — Tous droits réservés" data-en="© 2026 — All rights reserved" data-mg="© 2026 — Zo rehetra voatokana">© <span class="copyright-year">2026</span> — Tous droits réservés</p>
+      <div class="social-links" style="margin-top:24px">
+        <a href="https://www.facebook.com/fjkmwagnerparis" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47 14 5.5 16 5.5H17.5V2.14C17.174 2.097 15.943 2 14.643 2C11.928 2 10 3.657 10 6.7V9.5H7V13.5H10V22H14V13.5Z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/fjkmwagnerparis" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@fjkmwagnerparis" class="social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading" data-fr="Liens rapides" data-en="Quick Links" data-mg="Rohy haingana">Liens rapides</div>
+      <ul class="footer-links">
+        <li><a href="notre-eglise.html" data-fr="Notre Église" data-en="Our Church" data-mg="Fiangonana">Notre Église</a></li>
+        <li><a href="sections.html" data-fr="Sections" data-en="Groups" data-mg="Sampana">Sections</a></li>
+        <li><a href="../index.html#perikopa" data-fr="Pain du Jour" data-en="Daily Bread" data-mg="Mofo isan'andro">Pain du Jour</a></li>
+        <li><a href="toerana.html" data-fr="Lieu de Culte" data-en="Worship Place" data-mg="Toerana Fivavahana">Lieu de Culte</a></li>
+        <li><a href="contact.html" data-fr="Contact" data-en="Contact" data-mg="Fifandraisana">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading" data-fr="Contact" data-en="Contact" data-mg="Fifandraisana">Contact</div>
+      <div class="footer-contact-item">
+        <div class="footer-contact-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div>
+        <div class="footer-contact-text">(+33) 6.70.56.66.96</div>
+      </div>
+      <div class="footer-contact-item">
+        <div class="footer-contact-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+        <div class="footer-contact-text">7 bis Rue Pasteur Wagner<br>75011 Paris</div>
+      </div>
+      <div class="footer-contact-item">
+        <div class="footer-contact-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+        <div class="footer-contact-text">yvesraholiarison@gmail.com</div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading" data-fr="Horaires" data-en="Schedule" data-mg="Fotoana">Horaires</div>
+      <ul class="footer-links">
+        <li><a href="#" data-fr="Culte du dimanche — 10h00" data-en="Sunday service — 10:00 AM" data-mg="Fanompoam-pivavahana Alahady — 10ora">Culte du dimanche — 10h00</a></li>
+        <li><a href="#" data-fr="Étude biblique — Mercredi 19h" data-en="Bible study — Wednesday 7 PM" data-mg="Fianarana Baiboly — Alarobia 19ora">Étude biblique — Mercredi 19h</a></li>
+        <li><a href="#" data-fr="Répétition chorale — Samedi" data-en="Choir rehearsal — Saturday" data-mg="Fiakanana hira — Asabotsy">Répétition chorale — Samedi</a></li>
+        <li><a href="#" data-fr="Groupe de prière — Vendredi" data-en="Prayer group — Friday" data-mg="Vondron'ny vavaka — Zoma">Groupe de prière — Vendredi</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p data-fr="Développé avec ❤️ pour la communauté FJKM Wagner Paris" data-en="Made with ❤️ for the FJKM Wagner Paris community" data-mg="Natao tamin'ny ❤️ ho an'ny Fiangonana FJKM Wagner Paris">Développé avec ❤️ pour la communauté FJKM Wagner Paris</p>
+    <div class="footer-bottom-links">
+      <a href="politique-utilisation.html" data-fr="Politique d'utilisation" data-en="Terms of Use" data-mg="Fitsipika fampiasana">Politique d'utilisation</a>
+      <a href="mentions-legales.html" data-fr="Mentions légales" data-en="Legal Notice" data-mg="Filazana ara-dalàna">Mentions légales</a>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="backtotop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">
+  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+
+<!-- CONTRÔLES FLOTTANTS -->
+<div id="floatingControls" aria-label="Contrôles de langue et de thème">
+  <div id="langPanel" role="group" aria-label="Choisir la langue">
+    <button class="lang-btn" id="btnFR" aria-label="Français"><span class="lang-flag">🇫🇷</span> FR</button>
+    <button class="lang-btn" id="btnMG" aria-label="Malagasy"><span class="lang-flag">🇲🇬</span> MG</button>
+    <button class="lang-btn" id="btnEN" aria-label="English"><span class="lang-flag">🇬🇧</span> EN</button>
+  </div>
+  <div id="themePanel" role="group" aria-label="Choisir le thème">
+    <button class="theme-btn" id="btnDay" aria-label="Mode jour">
+      <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      Jour
+    </button>
+    <button class="theme-btn" id="btnNight" aria-label="Mode nuit">
+      <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+      Nuit
+    </button>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+<script src="../assets/js/firebase-config.js?v=2"></script>
+<script src="../assets/js/photos.js?v=2"></script>
+<script src="../assets/js/notre-eglise.js?v=2"></script>
+<script src="../assets/js/mobile-nav.js?v=2"></script>
+</body>
+</html>

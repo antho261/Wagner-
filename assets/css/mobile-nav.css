@@ -1,0 +1,211 @@
+@import url('variables.css?v=2');
+
+/* ═══════════════════════════════════════════════════
+   BARRE DE NAVIGATION MOBILE — pastille flottante
+   Remplace le hamburger + l'overlay plein écran
+   sur mobile et tablette portrait (≤ 1023px).
+   Ce fichier se charge EN DERNIER sur chaque page.
+   ═══════════════════════════════════════════════════ */
+
+/* Cette barre est un <nav>, donc la règle globale
+   « nav { position:fixed; top:0; background; box-shadow;
+   backdrop-filter } » de chaque page la vise aussi.
+   On la neutralise ici, sinon la barre se colle en haut
+   et traîne le fond de la barre de navigation du haut. */
+.mnav {
+  display: none;
+  top: auto;
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  border: 0;
+  transition: none;
+}
+
+/* ══════════════════════════════════════════════════
+   RÉGLAGES LANGUE & THÈME — repliés (mobile + desktop)
+   Avant : deux panneaux fixés en bas à droite, visibles
+   en permanence, qui recouvraient le contenu.
+   Maintenant : repliés derrière un bouton placé en haut,
+   dans la barre de navigation.
+   ══════════════════════════════════════════════════ */
+.mset-toggle {
+  display: flex;
+  align-items: center; justify-content: center;
+  width: 42px; height: 42px;
+  padding: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background .25s ease, border-color .25s ease, color .25s ease;
+}
+.mset-toggle svg { width: 21px; height: 21px; stroke-width: 1.9; }
+.mset-toggle:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+/* La nav est en space-between : avec le bouton, elle passe
+   à trois enfants et le menu se retrouverait centré.
+   Cette marge auto garde « liens + bouton » collés à droite. */
+.nav-links { margin-left: auto; }
+
+#floatingControls {
+  position: fixed;
+  /* la nav mesure ~82px : on se place juste dessous */
+  top: calc(90px + env(safe-area-inset-top));
+  right: 5%;
+  bottom: auto; left: auto;
+  z-index: 250;
+  align-items: flex-end;
+  gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px) scale(.96);
+  transform-origin: top right;
+  transition: opacity .22s ease,
+              transform .22s cubic-bezier(.34,1.3,.64,1),
+              visibility .22s;
+}
+#floatingControls.mset-open {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+/* Desktop : le bouton se pose après le lien Contact */
+@media (min-width: 1024px) {
+  .mset-toggle { margin-left: 24px; }
+}
+
+@media (max-width: 1023px) {
+
+  /* L'ancien menu ne doit plus jamais s'ouvrir :
+     sans hamburger, rien ne peut ajouter .open — mais
+     on neutralise l'overlay par sécurité (il se
+     superposait à la nav et croisait ✕ et hamburger). */
+  .hamburger,
+  .mobile-menu,
+  .mobile-menu.open { display: none !important; }
+
+  .mnav {
+    display: block;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 300;
+    padding: 0 14px calc(10px + env(safe-area-inset-bottom));
+    pointer-events: none;
+  }
+
+  .mnav-bar {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 7px 10px;
+    border-radius: 999px;
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    transition: background .35s ease, border-color .35s ease;
+  }
+
+  .mnav-item {
+    position: relative;
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    border-radius: 14px;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: color .25s ease;
+  }
+
+  .mnav-item svg {
+    position: relative;
+    z-index: 1;
+    width: 25px; height: 25px;
+    stroke-width: 1.9;
+    transition: transform .3s cubic-bezier(.34,1.56,.64,1);
+  }
+  .mnav-item:active svg { transform: scale(.88); }
+
+  /* Pastille de l'onglet actif : s'ouvre depuis le centre */
+  .mnav-pill {
+    position: absolute;
+    inset: 3px 50%;
+    border-radius: 13px;
+    opacity: 0;
+    pointer-events: none;
+    transition: inset .32s cubic-bezier(.34,1.4,.64,1), opacity .28s ease;
+  }
+  .mnav-item.active .mnav-pill { inset: 3px 6px; opacity: 1; }
+
+  .mnav-item:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  /* Libellé lu par les lecteurs d'écran — porte aussi
+     les data-fr/en/mg, donc applyLang() le traduit. */
+  .mnav-label {
+    position: absolute;
+    width: 1px; height: 1px;
+    margin: -1px; padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Dégager le contenu et le bouton « haut de page » */
+  body       { padding-bottom: calc(78px + env(safe-area-inset-bottom)); }
+  #backtotop { bottom: calc(86px + env(safe-area-inset-bottom)); }
+
+  /* Sur mobile le bouton occupe seul la droite de la nav :
+     on aligne le panneau sur la marge de la barre du bas. */
+  #floatingControls { right: 14px; }
+}
+
+body:not(.theme-dark) .mset-toggle {
+  background: rgba(26,18,8,.06);
+  border: 1px solid rgba(26,18,8,.18);
+  color: #1A1208;
+}
+body:not(.theme-dark) .mset-toggle[aria-expanded="true"] {
+  background: rgba(201,169,110,.28);
+  border-color: rgba(160,120,64,.55);
+}
+body.theme-dark .mset-toggle {
+  background: rgba(232,220,200,.08);
+  border: 1px solid rgba(201,169,110,.32);
+  color: #E8D5AA;
+}
+body.theme-dark .mset-toggle[aria-expanded="true"] {
+  background: rgba(201,169,110,.26);
+  border-color: rgba(201,169,110,.6);
+}
+
+/* ── MODE JOUR ── */
+body:not(.theme-dark) .mnav-bar {
+  background: rgba(255,255,255,.94);
+  border: 1px solid rgba(26,18,8,.12);
+  box-shadow: 0 6px 28px rgba(26,18,8,.14), 0 1px 3px rgba(26,18,8,.08);
+}
+body:not(.theme-dark) .mnav-item        { color: rgba(26,18,8,.62); }
+body:not(.theme-dark) .mnav-item.active { color: #1A1208; }
+body:not(.theme-dark) .mnav-pill        { background: rgba(201,169,110,.34); }
+
+/* ── MODE NUIT ── */
+body.theme-dark .mnav-bar {
+  background: rgba(14,20,30,.92);
+  border: 1px solid rgba(201,169,110,.26);
+  box-shadow: 0 6px 30px rgba(0,0,0,.5);
+}
+body.theme-dark .mnav-item        { color: rgba(232,220,200,.66); }
+body.theme-dark .mnav-item.active { color: #E8D5AA; }
+body.theme-dark .mnav-pill        { background: rgba(201,169,110,.26); }
+
+@media (prefers-reduced-motion: reduce) {
+  .mnav-item svg,
+  .mnav-pill { transition: none; }
+}

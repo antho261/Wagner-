@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Lieu de culte FJKM Wagner Paris – Toerana. 7 bis Rue Pasteur Wagner, 75011 Paris." />
+  <title>Toerana – Lieu de Culte | FJKM Wagner Paris</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C9A96E'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' text-anchor='middle' fill='%230D1117'%3EF%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/toerana.css?v=2" />
+  <link rel="stylesheet" href="../assets/css/responsive.css?v=2" />
+  <link rel="stylesheet" href="../assets/css/theme.css?v=2" />
+  <link rel="stylesheet" href="../assets/css/mobile-nav.css?v=2" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="../index.html" class="logo">
+    <div class="logo-mark">F</div>
+    <div class="logo-text">
+      <span>FJKM Wagner</span>
+      <span>Finoana Paris</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html" data-fr="Accueil" data-mg="Fandraisana" data-en="Home">Accueil</a></li>
+    <li><a href="notre-eglise.html" data-fr="Notre Église" data-mg="Fiangonana" data-en="Our Church">Notre Église</a></li>
+    <li><a href="../index.html#perikopa" data-fr="Pain du Jour" data-mg="Mofo isan'andro" data-en="Daily Bread">Pain du Jour</a></li>
+    <li><a href="sections.html" data-fr="Section" data-mg="Sampana" data-en="Groups">Section</a></li>
+    <li><a href="toerana.html" class="nav-active" data-fr="Lieu de Culte" data-mg="Toerana Fivavahana" data-en="Worship Place">Lieu de Culte</a></li>
+    <li><a href="contact.html" class="nav-cta" data-fr="Contact" data-mg="Fifandraisana" data-en="Contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="../index.html" onclick="closeMobile()" data-fr="Accueil" data-en="Home" data-mg="Fandraisana">Accueil</a>
+  <a href="notre-eglise.html" onclick="closeMobile()" data-fr="Notre Église" data-en="Our Church" data-mg="Fiangonana">Notre Église</a>
+  <a href="../index.html#perikopa" onclick="closeMobile()" data-fr="Pain du Jour" data-en="Daily Bread" data-mg="Mofo isan'andro">Pain du Jour</a>
+  <a href="sections.html" onclick="closeMobile()" data-fr="Section" data-en="Groups" data-mg="Sampana">Section</a>
+  <a href="toerana.html" onclick="closeMobile()" data-fr="Lieu de Culte" data-en="Worship Place" data-mg="Toerana Fivavahana">Lieu de Culte</a>
+  <a href="contact.html" onclick="closeMobile()" data-fr="Contact" data-en="Contact" data-mg="Fifandraisana">Contact</a>
+</div>
+
+<!-- ══════════════════════════════════════
+     HERO — Sombre, grand titre Toerana
+═══════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg" data-photo-key="toerana-hero"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow" data-fr="WELCOME TO" data-mg="TONGASOA" data-en="WELCOME TO">WELCOME TO</p>
+    <h1 class="hero-title">
+      <em data-fr="Toerana" data-mg="Toerana" data-en="Toerana">Toerana</em>
+    </h1>
+    <p class="hero-desc"
+       data-fr="Lieu de rassemblement de la communauté FJKM Wagner Paris, pour célébrer la foi, la louange et la parole de Dieu."
+       data-mg="Toeran'ny Fiangonana FJKM Wagner Paris, hankalazana ny finoana, ny fiderana ary ny tenin'Andriamanitra."
+       data-en="Gathering place of the FJKM Wagner Paris community, to celebrate faith, praise and the Word of God.">
+      Lieu de rassemblement de la communauté FJKM Wagner Paris, pour célébrer la foi, la louange et la parole de Dieu.
+    </p>
+    <a href="#upcoming" class="btn-hero"
+       data-fr="REJOIGNEZ-NOUS" data-mg="ANDAO HO ANTSIKA" data-en="JOIN US TODAY">
+      JOIN US TODAY
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     UPCOMING — Fond beige chaud
+═══════════════════════════════════════ -->
+<section id="upcoming">
+  <div class="upcoming-inner">
+
+    <!-- Gauche : photo style cinéma + play -->
+    <div class="upcoming-visual reveal">
+      <div class="upcoming-img-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1477672680933-0287a151330e?w=900&q=80"
+          alt="Intérieur église FJKM Wagner"
+          data-photo-key="toerana-lieu" />
+        <div class="upcoming-img-overlay"></div>
+        <button class="play-btn" aria-label="Voir la vidéo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Droite : listes -->
+    <div class="upcoming-content">
+
+      <div class="section-label reveal">
+        <div class="label-line"></div>
+        <span data-fr="TOERANA" data-mg="TOERANA" data-en="TOERANA">TOERANA</span>
+      </div>
+
+      <h2 class="upcoming-heading reveal reveal-delay-1">
+        <span data-fr="Upcoming" data-mg="Ho avy" data-en="Upcoming">Upcoming</span><br>
+        <em data-fr="Worship Place" data-mg="Toerana Fivavahana" data-en="Worship Place">Worship Place</em>
+      </h2>
+
+      <!-- WEEKLY GATHERINGS -->
+      <div class="list-block reveal reveal-delay-2">
+        <h3 class="list-title"
+            data-fr="RASSEMBLEMENTS HEBDOMADAIRES"
+            data-mg="FIVORIANA HERINANDRO"
+            data-en="WEEKLY GATHERINGS">
+          WEEKLY GATHERINGS
+        </h3>
+
+        <div class="gather-item">
+          <div class="gather-icon gi-sun">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </div>
+          <div>
+            <div class="gather-name" data-fr="Culte du Dimanche Matin" data-mg="Fanompoam-pivavahana Alahady" data-en="Sunday Morning Service">Sunday Morning Service</div>
+            <div class="gather-time">10.00 AM</div>
+          </div>
+        </div>
+
+        <div class="gather-item">
+          <div class="gather-icon gi-book">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <div>
+            <div class="gather-name" data-fr="Étude Biblique" data-mg="Fianarana Baiboly" data-en="Bible Study Group">Bible Study Group</div>
+            <div class="gather-time" data-fr="Mercredi 19h00" data-mg="Alarobia 19ora" data-en="Wednesdays 7.00 PM">Wednesdays 7.00 PM</div>
+          </div>
+        </div>
+
+        <div class="gather-item">
+          <div class="gather-icon gi-youth">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <div class="gather-name" data-fr="Groupe Jeunesse" data-mg="Vondron'ny Tanora" data-en="Youth Night">Youth Night</div>
+            <div class="gather-time" data-fr="Vendredi 20h00" data-mg="Zoma 20ora" data-en="Fridays 8.00 PM">Fridays 8.00 PM</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider reveal reveal-delay-2"></div>
+
+      <!-- UPCOMING EVENTS -->
+      <div class="list-block reveal reveal-delay-3">
+        <h3 class="list-title"
+            data-fr="ÉVÉNEMENTS À VENIR"
+            data-mg="HETSIKA HO AVY"
+            data-en="UPCOMING EVENTS">
+          UPCOMING EVENTS
+        </h3>
+
+        <div class="event-item">
+          <div class="event-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div>
+            <div class="event-name" data-fr="Culte Spécial Pentecôte" data-mg="Fanompoam-pivavahana Pentekosta" data-en="Community Outreach">Community Outreach</div>
+            <div class="event-date" data-fr="15 Juin, 10h00" data-mg="15 Jiona, 10ora" data-en="Oct 21st, 9.00 AM">Oct 21st, 9.00 AM</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div>
+            <div class="event-name" data-fr="Retraite Annuelle FJKM" data-mg="Fihaonana Isan-taona FJKM" data-en="Annual Retreat">Annual Retreat</div>
+            <div class="event-date" data-fr="5 Novembre" data-mg="5 Novambra" data-en="Nov 5th 7th">Nov 5th 7th</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /upcoming-content -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     ACCESS & MAP — Fond bois sombre
+═══════════════════════════════════════ -->
+<section id="acces">
+  <div class="acces-bg"></div>
+  <div class="acces-inner">
+
+    <!-- Infos -->
+    <div class="acces-info">
+
+      <div class="section-label section-label--light reveal">
+        <div class="label-line label-line--dim"></div>
+        <span data-fr="TOERANA FIVAVAHANA" data-mg="TOERANA FIVAVAHANA" data-en="WORSHIP PLACE">TOERANA FIVAVAHANA</span>
+      </div>
+
+      <h2 class="acces-heading reveal reveal-delay-1">
+        <span data-fr="Access &amp; Map" data-mg="Làlana &amp; Sarintany" data-en="Access &amp; Map">Access &amp; Map</span>
+      </h2>
+
+      <div class="acces-row reveal reveal-delay-2">
+        <div class="acces-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="acces-label" data-fr="ADRESSE" data-mg="ADIRESY" data-en="ADDRESS">ADDRESS</div>
+          <div class="acces-value">7 bis Rue Pasteur Wagner, 75011 Paris</div>
+        </div>
+      </div>
+
+      <div class="acces-row reveal reveal-delay-2">
+        <div class="acces-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div>
+          <div class="acces-label" data-fr="TRANSPORT" data-mg="FITATERANA" data-en="TRANSPORT">TRANSPORT</div>
+
+          <div class="tlist">
+            <div class="trow">
+              <div class="metro m1">M<b>1</b></div>
+              <div class="tinfo">
+                <span class="tname" data-fr="Public Transportation" data-mg="Fitaterana Maromaro" data-en="Public Transportation">Public Transportation</span>
+                <span class="texit" data-fr="Bastille — Sortie 9" data-mg="Bastille — Fivoahana 9" data-en="East Side">East Side</span>
+              </div>
+            </div>
+            <div class="trow">
+              <div class="metro m5">M<b>5</b></div>
+              <div class="tinfo">
+                <span class="tname" data-fr="Train Bréguet-Sabin" data-mg="Train Bréguet-Sabin" data-en="Train Bréguet Station">Train Bréguet Station</span>
+                <span class="texit" data-fr="Sortie 2" data-mg="Fivoahana 2" data-en="Terminus">Terminus</span>
+              </div>
+            </div>
+            <div class="trow">
+              <div class="metro m8">M<b>8</b></div>
+              <div class="tinfo">
+                <span class="tname" data-fr="Transit Bréguet-Sabin" data-mg="Transit Bréguet-Sabin" data-en="Public Transit Station">Public Transit Station</span>
+                <span class="texit" data-fr="Sortie 1" data-mg="Fivoahana 1" data-en="Terminus">Terminus</span>
+              </div>
+            </div>
+            <div class="trow">
+              <div class="pico">P</div>
+              <div class="tinfo">
+                <span class="tname" data-fr="Parking" data-mg="Parking" data-en="Parking">Parking</span>
+                <span class="texit" data-fr="À proximité" data-mg="Akaikin'ny" data-en="Nearby">Nearby</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://www.google.com/maps/dir/?api=1&destination=7+bis+Rue+Pasteur+Wagner+75011+Paris"
+         target="_blank" rel="noopener"
+         class="btn-dir reveal reveal-delay-3">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16"/></svg>
+        <span data-fr="ITINÉRAIRE" data-mg="LÀLANA" data-en="GET DIRECTIONS">GET DIRECTIONS</span>
+      </a>
+    </div>
+
+    <!-- Carte -->
+    <div class="map-wrap reveal reveal-delay-2">
+      <div id="fjkmMap"></div>
+      <div class="map-label">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="#C9A96E"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        FJKM Wagner Paris
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer id="footer">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <a href="../index.html" class="logo" style="margin-bottom:18px;display:inline-flex">
+        <div class="logo-mark">F</div>
+        <div class="logo-text">
+          <span>FJKM Wagner</span>
+          <span>Finoana Paris</span>
+        </div>
+      </a>
+      <p>7 bis Rue Pasteur Wagner<br>75011 Paris, France</p>
+      <p style="margin-top:4px"><a href="https://fjkmwagner.fr" class="fbrand-link">www.fjkmwagner.fr</a></p>
+      <p class="fbrand-copy" style="margin-top:6px">© COPYRIGHT FJKM WAGNER</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47 14 5.5 16 5.5H17.5V2.14C17.174 2.097 15.943 2 14.643 2C11.928 2 10 3.657 10 6.7V9.5H7V13.5H10V22H14V13.5Z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title" data-fr="Trouver us" data-mg="Hahita anay" data-en="Find us">Trouver us</div>
+      <ul>
+        <li><a href="../index.html"               data-fr="Maison"        data-mg="Fandraisana"     data-en="Home">Maison</a></li>
+        <li><a href="../index.html#gallery"       data-fr="Notre Église"  data-mg="Fiangonana"      data-en="About Us">Notre Église</a></li>
+        <li><a href="../index.html#perikopa"      data-fr="Pain du Jour"  data-mg="Mofo isan'andro" data-en="Events">Pain du Jour</a></li>
+        <li><a href="sections.html" data-fr="Sections"      data-mg="Sampana"         data-en="News">Sections</a></li>
+        <li><a href="mentions-legales.html"       data-fr="Mentions Légales" data-mg="Filazana"     data-en="Legal">Mentions Légales</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title" data-fr="Contact" data-mg="Fifandraisana" data-en="Contact">Contact</div>
+      <div class="footer-contact">
+        <div class="fc-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (+33) 6.70.56.66.96
+        </div>
+        <div class="fc-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          7 bis Rue Pasteur Wagner 75011 Paris
+        </div>
+        <div class="fc-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          yvesraholiarison@gmail.com
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title" data-fr="Horaires" data-mg="Fotoana" data-en="Schedule">Horaires</div>
+      <div class="footer-schedule">
+        <div class="fs-item">
+          <span class="fs-label" data-fr="Prédication Dim." data-mg="Toriteny Alah." data-en="Sunday Sermon">Prédication Dim.</span>
+          <span class="fs-time">10h00 pm</span>
+        </div>
+        <div class="fs-item">
+          <span class="fs-label" data-fr="Mère Soleil" data-mg="Reny Mazava" data-en="Wed Mothers">Mère Soleil</span>
+          <span class="fs-time">2:00 pm</span>
+        </div>
+        <div class="fs-item">
+          <span class="fs-label" data-fr="Filles Héritages" data-mg="Zanakavavy Lova" data-en="Wed Messages">Filles Héritages</span>
+          <span class="fs-time">2:30 pm</span>
+        </div>
+        <div class="fs-item">
+          <span class="fs-label" data-fr="Prière Lundi" data-mg="Vavaka Alatsinainy" data-en="Prayer Dusk">Prière Lundi</span>
+          <span class="fs-time">5:00 pm</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© <span class="copyright-year">2026</span> FJKM Wagner Paris — <span data-fr="Tous droits réservés" data-mg="Zo rehetra voatokana" data-en="All rights reserved">Tous droits réservés</span></p>
+    <div class="footer-bottom-links">
+      <a href="politique-utilisation.html" data-fr="Politique d'utilisation" data-mg="Fitsipika fampiasana" data-en="Terms of Use">Politique d'utilisation</a>
+      <a href="mentions-legales.html"      data-fr="Mentions légales"        data-mg="Filazana ara-dalàna"  data-en="Legal Notice">Mentions légales</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="backtotop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">
+  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+</button>
+
+<!-- Contrôles flottants -->
+<div id="floatingControls">
+  <div id="langPanel">
+    <button class="lang-btn" id="btnFR"><span class="lang-flag">🇫🇷</span> FR</button>
+    <button class="lang-btn" id="btnMG"><span class="lang-flag">🇲🇬</span> MG</button>
+    <button class="lang-btn" id="btnEN"><span class="lang-flag">🇬🇧</span> EN</button>
+  </div>
+  <div id="themePanel">
+    <button class="theme-btn" id="btnDay">
+      <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      Jour
+    </button>
+    <button class="theme-btn" id="btnNight">
+      <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      Nuit
+    </button>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+<script src="../assets/js/firebase-config.js?v=2"></script>
+<script src="../assets/js/photos.js?v=2"></script>
+<script src="../assets/js/toerana.js?v=2"></script>
+
+<!-- Google Maps JavaScript API -->
+<script>
+(function() {
+  const LAT = 48.8530, LNG = 2.3728;
+  const churchSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="56" height="72" viewBox="0 0 56 72"><defs><filter id="shadow" x="-30%" y="-20%" width="160%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="rgba(0,0,0,0.35)"/></filter></defs><ellipse cx="28" cy="56" rx="9" ry="4" fill="rgba(0,0,0,0.2)"/><path d="M28 68 C28 68 6 46 6 30 C6 18 16 8 28 8 C40 8 50 18 50 30 C50 46 28 68 28 68Z" fill="#C9A96E" filter="url(#shadow)"/><path d="M28 64 C28 64 9 44 9 30 C9 19.5 17.5 11 28 11 C38.5 11 47 19.5 47 30 C47 44 28 64 28 64Z" fill="#B8913A"/><rect x="26" y="17" width="4" height="16" rx="1.5" fill="white" opacity="0.95"/><rect x="21" y="21" width="14" height="4" rx="1.5" fill="white" opacity="0.95"/><path d="M18 30 L28 22 L38 30 Z" fill="white" opacity="0.85"/><rect x="20" y="30" width="16" height="12" rx="1" fill="white" opacity="0.85"/><path d="M25 42 L25 36 Q28 33 31 36 L31 42 Z" fill="#B8913A"/><circle cx="23" cy="33" r="1.8" fill="#B8913A" opacity="0.7"/><circle cx="33" cy="33" r="1.8" fill="#B8913A" opacity="0.7"/></svg>`;
+  const encoded = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(churchSVG);
+
+  window.initFJKMMap = function() {
+    const mapEl = document.getElementById('fjkmMap');
+    if (!mapEl) return;
+    const styledMap = [
+      { elementType: 'geometry', stylers: [{ color: '#1a2133' }] },
+      { elementType: 'labels.text.fill', stylers: [{ color: '#8A9BB0' }] },
+      { elementType: 'labels.text.stroke', stylers: [{ color: '#111827' }] },
+      { featureType: 'road', elementType: 'geometry', stylers: [{ color: '#2a3550' }] },
+      { featureType: 'road.highway', elementType: 'geometry', stylers: [{ color: '#3a4f72' }] },
+      { featureType: 'road', elementType: 'labels.text.fill', stylers: [{ color: '#7a8fa8' }] },
+      { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#0d1620' }] },
+      { featureType: 'poi', elementType: 'geometry', stylers: [{ color: '#162030' }] },
+      { featureType: 'poi.park', elementType: 'geometry', stylers: [{ color: '#1a3028' }] },
+      { featureType: 'transit', elementType: 'geometry', stylers: [{ color: '#1e2c44' }] },
+      { featureType: 'transit.station', elementType: 'labels.text.fill', stylers: [{ color: '#C9A96E' }] },
+      { featureType: 'administrative.locality', elementType: 'labels.text.fill', stylers: [{ color: '#C9A96E' }] },
+    ];
+    const map = new google.maps.Map(mapEl, {
+      center: { lat: LAT, lng: LNG }, zoom: 17, mapTypeId: 'roadmap',
+      styles: styledMap, disableDefaultUI: true, zoomControl: true,
+      zoomControlOptions: { position: google.maps.ControlPosition.RIGHT_CENTER },
+      gestureHandling: 'cooperative', clickableIcons: false,
+    });
+    const marker = new google.maps.Marker({
+      position: { lat: LAT, lng: LNG }, map,
+      title: 'FJKM Wagner Paris',
+      icon: { url: encoded, scaledSize: new google.maps.Size(56, 72), anchor: new google.maps.Point(28, 68) },
+      animation: google.maps.Animation.DROP,
+    });
+    const iw = new google.maps.InfoWindow({
+      content: `<div style="font-family:'DM Sans',sans-serif;padding:12px 16px;min-width:190px;background:#111827;color:#E8E0D4;border-radius:8px;"><div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#C9A96E;font-weight:600;margin-bottom:5px;">FJKM Wagner Paris</div><div style="font-size:13px;font-weight:500;margin-bottom:3px;">7 bis Rue Pasteur Wagner</div><div style="font-size:12px;color:#8A9BB0;margin-bottom:10px;">75011 Paris</div><a href="https://www.google.com/maps/dir/?api=1&destination=7+bis+Rue+Pasteur+Wagner+75011+Paris" target="_blank" style="display:inline-block;background:#C9A96E;color:#0D1117;padding:6px 14px;border-radius:5px;font-size:11px;font-weight:700;letter-spacing:1px;text-decoration:none;">➜ Itinéraire</a></div>`,
+      maxWidth: 260,
+    });
+    marker.addListener('click', () => iw.open(map, marker));
+    setTimeout(() => iw.open(map, marker), 1000);
+    new google.maps.Circle({ strokeColor: '#C9A96E', strokeOpacity: 0.35, strokeWeight: 1.5, fillColor: '#C9A96E', fillOpacity: 0.05, map, center: { lat: LAT, lng: LNG }, radius: 80 });
+  };
+
+  const s = document.createElement('script');
+  s.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCymlQKiXASRM-r2mEB_BojCkYiV3RTwuo&callback=initFJKMMap&language=fr';
+  s.async = true; s.defer = true;
+  document.head.appendChild(s);
+})();
+</script>
+<script src="../assets/js/mobile-nav.js?v=2"></script>
+</body>
+</html>

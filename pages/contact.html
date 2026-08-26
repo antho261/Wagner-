@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Contactez l'église FJKM Wagner Paris — pasteur, secrétariat, trésorerie, chorale, jeunesse et plus." />
+  <title>Contact – FJKM Wagner Paris</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C9A96E'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' text-anchor='middle' fill='%230D1117'%3EF%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/contact.css?v=2" />
+  <link rel="stylesheet" href="../assets/css/responsive.css?v=2" />
+  <link rel="stylesheet" href="../assets/css/theme.css?v=2" />
+  <link rel="stylesheet" href="../assets/css/mobile-nav.css?v=2" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="../index.html" class="logo">
+    <div class="logo-mark">F</div>
+    <div class="logo-text">
+      <span>FJKM Wagner</span>
+      <span>Finoana Paris</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html" data-fr="Accueil" data-en="Home" data-mg="Fandraisana">Accueil</a></li>
+    <li><a href="notre-eglise.html" data-fr="Notre Église" data-en="Our Church" data-mg="Fiangonana">Notre Église</a></li>
+    <li><a href="../index.html#perikopa" data-fr="Pain du Jour" data-en="Daily Bread" data-mg="Mofo isan'andro">Pain du Jour</a></li>
+    <li><a href="sections.html" data-fr="Section" data-en="Groups" data-mg="Sampana">Section</a></li>
+    <li><a href="toerana.html" data-fr="Lieu de Culte" data-en="Worship Place" data-mg="Toerana Fivavahana">Lieu de Culte</a></li>
+    <li><a href="contact.html" class="nav-active nav-cta" data-fr="Contact" data-en="Contact" data-mg="Fifandraisana">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="../index.html" onclick="closeMobile()" data-fr="Accueil" data-en="Home" data-mg="Fandraisana">Accueil</a>
+  <a href="notre-eglise.html" onclick="closeMobile()" data-fr="Notre Église" data-en="Our Church" data-mg="Fiangonana">Notre Église</a>
+  <a href="../index.html#perikopa" onclick="closeMobile()" data-fr="Pain du Jour" data-en="Daily Bread" data-mg="Mofo isan'andro">Pain du Jour</a>
+  <a href="sections.html" onclick="closeMobile()" data-fr="Section" data-en="Groups" data-mg="Sampana">Section</a>
+  <a href="toerana.html" onclick="closeMobile()" data-fr="Lieu de Culte" data-en="Worship Place" data-mg="Toerana Fivavahana">Lieu de Culte</a>
+  <a href="contact.html" onclick="closeMobile()" data-fr="Contact" data-en="Contact" data-mg="Fifandraisana">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" data-photo-key="contact-hero"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span data-fr="Nous écrire" data-en="Write to us" data-mg="Manorata anay">Nous écrire</span>
+    </div>
+    <h1 class="hero-title">
+      <span data-fr="Contactez" data-en="Contact" data-mg="Mifandraisa">Contactez</span><br>
+      <em data-fr="l'Église" data-en="the Church" data-mg="ny Fiangonana">l'Église</em>
+    </h1>
+    <p class="hero-subtitle">
+      <span data-fr="Une question, un témoignage, un besoin — choisissez votre destinataire et envoyez-nous votre message directement." data-en="A question, a testimony, a need — choose your recipient and send us your message directly." data-mg="Fanontaniana, fanambarana, na filana — safidio ny mpandray ary alefaso mivantana ny hafatrao.">Une question, un témoignage, un besoin — choisissez votre destinataire et envoyez-nous votre message directement.</span>
+    </p>
+  </div>
+</section>
+
+<!-- FORMULAIRE -->
+<section id="contact-form-section">
+  <div class="cf-container">
+
+    <!-- Étape 1 : Destinataire -->
+    <div class="cf-step reveal">
+      <div class="cf-step-label">
+        <span class="cf-step-num">01</span>
+        <span data-fr="Choisissez votre destinataire" data-en="Choose your recipient" data-mg="Safidio ny mpandray">Choisissez votre destinataire</span>
+      </div>
+      <div class="cf-recipients" id="cfRecipients">
+
+        <button class="cf-recipient" data-email="yvesraholiarison@gmail.com" type="button">
+          <div class="cf-rec-icon">✝</div>
+          <div class="cf-rec-body">
+            <div class="cf-rec-name" data-fr="Pasteur" data-en="Pastor" data-mg="Pasteur">Pasteur</div>
+            <div class="cf-rec-sub">Yves Raholiarson</div>
+          </div>
+        </button>
+
+        <button class="cf-recipient" data-email="toxdago@live.fr" type="button">
+          <div class="cf-rec-icon">📋</div>
+          <div class="cf-rec-body">
+            <div class="cf-rec-name" data-fr="Secrétariat" data-en="Secretariat" data-mg="Sekretera">Secrétariat</div>
+            <div class="cf-rec-sub" data-fr="Administration" data-en="Administration" data-mg="Fitantanana">Administration</div>
+          </div>
+        </button>
+
+        <button class="cf-recipient" data-email="toxdago@live.fr" type="button">
+          <div class="cf-rec-icon">💰</div>
+          <div class="cf-rec-body">
+            <div class="cf-rec-name" data-fr="Trésorerie" data-en="Treasury" data-mg="Fitahirizana">Trésorerie</div>
+            <div class="cf-rec-sub" data-fr="Finances" data-en="Finances" data-mg="Ara-bola">Finances</div>
+          </div>
+        </button>
+
+        <button class="cf-recipient" data-email="toxdago@live.fr" type="button">
+          <div class="cf-rec-icon">🕊</div>
+          <div class="cf-rec-body">
+            <div class="cf-rec-name" data-fr="Diacre" data-en="Deacon" data-mg="Diakona">Diacre</div>
+            <div class="cf-rec-sub" data-fr="Soutien pastoral" data-en="Pastoral support" data-mg="Fanohana pastoraly">Soutien pastoral</div>
+          </div>
+        </button>
+
+        <button class="cf-recipient" data-email="toxdago@live.fr" type="button">
+          <div class="cf-rec-icon">🎵</div>
+          <div class="cf-rec-body">
+            <div class="cf-rec-name" data-fr="Chorale" data-en="Choir" data-mg="Antoko Mpihira">Chorale</div>
+            <div class="cf-rec-sub" data-fr="Musique & Louange" data-en="Music & Praise" data-mg="Mozika & Fiderana">Musique & Louange</div>
+          </div>
+        </button>
+
+        <button class="cf-recipient" data-email="toxdago@live.fr" type="button">
+          <div class="cf-rec-icon">⚡</div>
+          <div class="cf-rec-body">
+            <div class="cf-rec-name" data-fr="Jeunesse" data-en="Youth" data-mg="Tanora">Jeunesse</div>
+            <div class="cf-rec-sub" data-fr="Groupe des jeunes" data-en="Youth group" data-mg="Vondron'ny tanora">Groupe des jeunes</div>
+          </div>
+        </button>
+
+        <button class="cf-recipient" data-email="toxdago@live.fr" type="button">
+          <div class="cf-rec-icon">🙏</div>
+          <div class="cf-rec-body">
+            <div class="cf-rec-name" data-fr="Prière" data-en="Prayer" data-mg="Vavaka">Prière</div>
+            <div class="cf-rec-sub" data-fr="Groupe de prière" data-en="Prayer group" data-mg="Vondron'ny vavaka">Groupe de prière</div>
+          </div>
+        </button>
+
+        <button class="cf-recipient" data-email="toxdago@live.fr" type="button">
+          <div class="cf-rec-icon">ℹ</div>
+          <div class="cf-rec-body">
+            <div class="cf-rec-name" data-fr="Information" data-en="Information" data-mg="Fampahalalana">Information</div>
+            <div class="cf-rec-sub" data-fr="Renseignements généraux" data-en="General enquiries" data-mg="Fanontaniana ankapobeny">Renseignements généraux</div>
+          </div>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Étape 2 : Informations personnelles -->
+    <div class="cf-step reveal reveal-delay-1">
+      <div class="cf-step-label">
+        <span class="cf-step-num">02</span>
+        <span data-fr="Vos informations" data-en="Your information" data-mg="Ny mombamombany">Vos informations</span>
+      </div>
+      <div class="cf-fields">
+        <div class="cf-field-group">
+          <div class="cf-field">
+            <label for="cfNom" data-fr="Nom *" data-en="Last name *" data-mg="Fianakaviana *">Nom *</label>
+            <input type="text" id="cfNom" name="nom" required autocomplete="family-name"
+              placeholder="Votre nom de famille" />
+          </div>
+          <div class="cf-field">
+            <label for="cfPrenom" data-fr="Prénom *" data-en="First name *" data-mg="Anarana *">Prénom *</label>
+            <input type="text" id="cfPrenom" name="prenom" required autocomplete="given-name"
+              placeholder="Votre prénom" />
+          </div>
+        </div>
+        <div class="cf-field">
+          <label for="cfEmail" data-fr="Email *" data-en="Email *" data-mg="Mailasy *">Email *</label>
+          <input type="email" id="cfEmail" name="email" required autocomplete="email"
+            placeholder="votre@email.com" />
+        </div>
+        <div class="cf-field">
+          <label for="cfTel" data-fr="Téléphone (facultatif)" data-en="Phone (optional)" data-mg="Finday (tsy voatery)">Téléphone (facultatif)</label>
+          <input type="tel" id="cfTel" name="tel" autocomplete="tel"
+            placeholder="+33 6 XX XX XX XX" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Étape 3 : Message -->
+    <div class="cf-step reveal reveal-delay-2">
+      <div class="cf-step-label">
+        <span class="cf-step-num">03</span>
+        <span data-fr="Votre message" data-en="Your message" data-mg="Ny hafatrao">Votre message</span>
+      </div>
+      <div class="cf-field">
+        <label for="cfMessage" data-fr="Message *" data-en="Message *" data-mg="Hafatra *">Message *</label>
+        <textarea id="cfMessage" name="message" required rows="6"
+          placeholder="Écrivez votre message ici..."></textarea>
+      </div>
+    </div>
+
+    <!-- Envoi -->
+    <div class="cf-submit-row reveal reveal-delay-3">
+      <p class="cf-disclaimer">
+        <span data-fr="* Champs obligatoires. Votre message sera envoyé directement au destinataire sans ouvrir votre messagerie." data-en="* Required fields. Your message will be sent directly without opening your email client." data-mg="* Tsy maintsy fenina. Ny hafatrao dia halefa mivantana tsy mila mailasy.">* Champs obligatoires. Votre message sera envoyé directement au destinataire sans ouvrir votre messagerie.</span>
+      </p>
+      <button class="cf-btn" id="cfSubmit" type="button">
+        <span class="cf-btn-label" data-fr="Envoyer le message" data-en="Send message" data-mg="Alefaso ny hafatra">Envoyer le message</span>
+        <svg class="cf-btn-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+        <svg class="cf-btn-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2a10 10 0 0 1 10 10"/></svg>
+      </button>
+    </div>
+
+    <!-- Succès -->
+    <div class="cf-success" id="cfSuccess">
+      <div class="cf-success-icon">✓</div>
+      <h3 data-fr="Message envoyé !" data-en="Message sent!" data-mg="Nalefa ny hafatra!">Message envoyé !</h3>
+      <p data-fr="Merci ! Votre message a bien été transmis. Nous vous répondrons à l'adresse email indiquée dans les meilleurs délais." data-en="Thank you! Your message has been sent. We will reply to your email address as soon as possible." data-mg="Misaotra! Nalefa ny hafatrao. Hamaly amin'ny mailasy nomenao izahay tsy ho ela.">Merci ! Votre message a bien été transmis. Nous vous répondrons à l'adresse email indiquée dans les meilleurs délais.</p>
+    </div>
+
+    <!-- Erreur -->
+    <div class="cf-error-msg" id="cfError">
+      <span>⚠</span>
+      <p data-fr="Une erreur est survenue. Veuillez réessayer ou nous écrire directement à yvesraholiarison@gmail.com" data-en="An error occurred. Please try again or write to us at yvesraholiarison@gmail.com" data-mg="Nisy hadisoana. Azafady andramo indray na soraty mivantana amin'ny yvesraholiarison@gmail.com">Une erreur est survenue. Veuillez réessayer ou nous écrire directement à yvesraholiarison@gmail.com</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- INFOS DE CONTACT -->
+<section id="contact-info">
+  <div class="ci-grid">
+    <div class="ci-item reveal">
+      <div class="ci-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+      <div class="ci-label" data-fr="Téléphone" data-en="Phone" data-mg="Finday">Téléphone</div>
+      <a href="tel:+33670566696" class="ci-value">(+33) 6.70.56.66.96</a>
+    </div>
+    <div class="ci-item reveal reveal-delay-1">
+      <div class="ci-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="ci-label" data-fr="Adresse" data-en="Address" data-mg="Adiresy">Adresse</div>
+      <div class="ci-value">7 bis Rue Pasteur Wagner<br>75011 Paris</div>
+    </div>
+    <div class="ci-item reveal reveal-delay-2">
+      <div class="ci-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div class="ci-label" data-fr="Culte dominical" data-en="Sunday service" data-mg="Fanompoana Alahady">Culte dominical</div>
+      <div class="ci-value" data-fr="Dimanche — 10h00" data-en="Sunday — 10:00 AM" data-mg="Alahady — 10ora">Dimanche — 10h00</div>
+    </div>
+    <div class="ci-item reveal reveal-delay-3">
+      <div class="ci-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg></div>
+      <div class="ci-label" data-fr="Email" data-en="Email" data-mg="Mailasy">Email</div>
+      <a href="mailto:yvesraholiarison@gmail.com" class="ci-value">yvesraholiarison@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo" style="margin-bottom:24px">
+        <div class="logo-mark">F</div>
+        <div class="logo-text"><span>FJKM Wagner</span><span>Finoana Paris</span></div>
+      </div>
+      <p data-fr="Communauté chrétienne malgache à Paris, unie dans la foi, l'amour et l'espérance." data-en="Malagasy Christian community in Paris, united in faith, love, and hope." data-mg="Fiangonana kristiana Malagasy ao Paris, miray amin'ny finoana, fitiavana ary fanantenana.">Communauté chrétienne malgache à Paris, unie dans la foi, l'amour et l'espérance.</p>
+      <p style="margin-top:8px" data-fr="© 2026 — Tous droits réservés" data-en="© 2026 — All rights reserved" data-mg="© 2026 — Zo rehetra voatokana">© <span class="copyright-year">2026</span> — Tous droits réservés</p>
+      <div class="social-links" style="margin-top:24px">
+        <a href="https://www.facebook.com/fjkmwagnerparis" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47 14 5.5 16 5.5H17.5V2.14C17.174 2.097 15.943 2 14.643 2C11.928 2 10 3.657 10 6.7V9.5H7V13.5H10V22H14V13.5Z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/fjkmwagnerparis" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@fjkmwagnerparis" class="social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading" data-fr="Liens rapides" data-en="Quick Links" data-mg="Rohy haingana">Liens rapides</div>
+      <ul class="footer-links">
+        <li><a href="notre-eglise.html" data-fr="Notre Église" data-en="Our Church" data-mg="Fiangonana">Notre Église</a></li>
+        <li><a href="sections.html" data-fr="Sections" data-en="Groups" data-mg="Sampana">Sections</a></li>
+        <li><a href="../index.html#perikopa" data-fr="Pain du Jour" data-en="Daily Bread" data-mg="Mofo isan'andro">Pain du Jour</a></li>
+        <li><a href="toerana.html" data-fr="Lieu de Culte" data-en="Worship Place" data-mg="Toerana Fivavahana">Lieu de Culte</a></li>
+        <li><a href="contact.html" data-fr="Contact" data-en="Contact" data-mg="Fifandraisana">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading" data-fr="Contact" data-en="Contact" data-mg="Fifandraisana">Contact</div>
+      <div class="footer-contact-item">
+        <div class="footer-contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div class="footer-contact-text">(+33) 6.70.56.66.96</div>
+      </div>
+      <div class="footer-contact-item">
+        <div class="footer-contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="footer-contact-text">7 bis Rue Pasteur Wagner<br>75011 Paris</div>
+      </div>
+      <div class="footer-contact-item">
+        <div class="footer-contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg></div>
+        <div class="footer-contact-text">yvesraholiarison@gmail.com</div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading" data-fr="Horaires" data-en="Schedule" data-mg="Fotoana">Horaires</div>
+      <ul class="footer-links">
+        <li><a href="#" data-fr="Culte du dimanche — 10h00" data-en="Sunday service — 10:00 AM" data-mg="Fanompoam-pivavahana Alahady — 10ora">Culte du dimanche — 10h00</a></li>
+        <li><a href="#" data-fr="Étude biblique — Mercredi 19h" data-en="Bible study — Wednesday 7 PM" data-mg="Fianarana Baiboly — Alarobia 19ora">Étude biblique — Mercredi 19h</a></li>
+        <li><a href="#" data-fr="Répétition chorale — Samedi" data-en="Choir rehearsal — Saturday" data-mg="Fiakanana hira — Asabotsy">Répétition chorale — Samedi</a></li>
+        <li><a href="#" data-fr="Groupe de prière — Vendredi" data-en="Prayer group — Friday" data-mg="Vondron'ny vavaka — Zoma">Groupe de prière — Vendredi</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p data-fr="Développé avec ❤️ pour la communauté FJKM Wagner Paris" data-en="Made with ❤️ for the FJKM Wagner Paris community" data-mg="Natao tamin'ny ❤️ ho an'ny Fiangonana FJKM Wagner Paris">Développé avec ❤️ pour la communauté FJKM Wagner Paris</p>
+    <div class="footer-bottom-links">
+      <a href="politique-utilisation.html" data-fr="Politique d'utilisation" data-en="Terms of Use" data-mg="Fitsipika fampiasana">Politique d'utilisation</a>
+      <a href="mentions-legales.html" data-fr="Mentions légales" data-en="Legal Notice" data-mg="Filazana ara-dalàna">Mentions légales</a>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="backtotop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">
+  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+
+<!-- CONTRÔLES FLOTTANTS -->
+<div id="floatingControls" aria-label="Contrôles de langue et de thème">
+  <div id="langPanel" role="group" aria-label="Choisir la langue">
+    <button class="lang-btn" id="btnFR" aria-label="Français"><span class="lang-flag">🇫🇷</span> FR</button>
+    <button class="lang-btn" id="btnMG" aria-label="Malagasy"><span class="lang-flag">🇲🇬</span> MG</button>
+    <button class="lang-btn" id="btnEN" aria-label="English"><span class="lang-flag">🇬🇧</span> EN</button>
+  </div>
+  <div id="themePanel" role="group" aria-label="Choisir le thème">
+    <button class="theme-btn" id="btnDay" aria-label="Mode jour">
+      <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      Jour
+    </button>
+    <button class="theme-btn" id="btnNight" aria-label="Mode nuit">
+      <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+      Nuit
+    </button>
+  </div>
+</div>
+
+<script src="../assets/js/contact.js?v=2"></script>
+<script src="../assets/js/mobile-nav.js?v=2"></script>
+</body>
+</html>
