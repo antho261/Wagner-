@@ -111,37 +111,40 @@ function showToast(msg, type) {
   toastTimer = setTimeout(function () { $toast.className = ''; }, 3500);
 }
 
-// ── Initialisation Firebase ───────────────────────────────
-function initFirebase() {
-  if (typeof firebase === 'undefined') {
+// ── Initialisation Supabase ───────────────────────────────
+function initSupabase() {
+  if (typeof supabase === 'undefined') {
     $loading.innerHTML = '<div style="color:#E07070;font-family:sans-serif;text-align:center;padding:40px;max-width:500px;margin:0 auto">' +
       '<p style="font-size:48px;margin-bottom:20px">⚠️</p>' +
-      '<p style="font-size:18px;margin-bottom:12px;color:#DDD5C8">Firebase non chargé</p>' +
-      '<p style="font-size:14px;color:rgba(221,213,200,.5);line-height:1.6">Vérifiez votre connexion internet.<br>Les SDKs Firebase se chargent depuis gstatic.com.</p>' +
+      '<p style="font-size:18px;margin-bottom:12px;color:#DDD5C8">SDK Supabase non chargé</p>' +
+      '<p style="font-size:14px;color:rgba(221,213,200,.5);line-height:1.6">Vérifiez votre connexion internet.<br>Le SDK se charge depuis cdn.jsdelivr.net.</p>' +
       '</div>';
     return;
   }
 
-  try {
-    auth    = firebase.auth();
-    db      = firebase.firestore();
-    storage = firebase.storage();
-  } catch (e) {
+  if (!window.FJKM_SB) {
     $loading.innerHTML = '<div style="color:#E07070;font-family:sans-serif;text-align:center;padding:40px;max-width:500px;margin:0 auto">' +
       '<p style="font-size:48px;margin-bottom:20px">🔧</p>' +
-      '<p style="font-size:18px;margin-bottom:12px;color:#DDD5C8">Configuration Firebase manquante</p>' +
-      '<p style="font-size:14px;color:rgba(221,213,200,.5);line-height:1.6">Ouvrez <code style="background:rgba(255,255,255,.1);padding:2px 6px;border-radius:4px">assets/js/firebase-config.js</code><br>et renseignez vos clés Firebase.</p>' +
+      '<p style="font-size:18px;margin-bottom:12px;color:#DDD5C8">Configuration Supabase manquante</p>' +
+      '<p style="font-size:14px;color:rgba(221,213,200,.5);line-height:1.6">Ouvrez <code style="background:rgba(255,255,255,.1);padding:2px 6px;border-radius:4px">assets/js/supabase-config.js</code><br>et renseignez l\'URL du projet et la clé anon.</p>' +
       '</div>';
     return;
   }
 
-  auth.onAuthStateChanged(function (user) {
+  db = FJKM_SB;
+
+  function route(session) {
     $loading.classList.add('hidden');
-    if (user) {
-      showDashboard();
-    } else {
-      $login.classList.remove('hidden');
-    }
+    if (session) showDashboard();
+    else $login.classList.remove('hidden');
+  }
+
+  // Session existante (l'utilisateur revient), puis suivi des changements
+  FJKM_SB.auth.getSession().then(function (res) {
+    route(res.data ? res.data.session : null);
+  });
+  FJKM_SB.auth.onAuthStateChange(function (event, session) {
+    route(session);
   });
 }
 
@@ -152,20 +155,24 @@ $loginForm.addEventListener('submit', function (e) {
   $btnLogin.disabled = true;
   $btnLogin.textContent = 'Connexion...';
 
-  auth.signInWithEmailAndPassword($email.value.trim(), $pass.value)
-    .catch(function (err) {
-      var msg = 'Email ou mot de passe incorrect.';
-      if (err.code === 'auth/too-many-requests')       msg = 'Trop de tentatives. Réessayez dans quelques minutes.';
-      if (err.code === 'auth/network-request-failed')  msg = 'Erreur réseau. Vérifiez votre connexion internet.';
-      if (err.code === 'auth/user-not-found')          msg = 'Aucun compte trouvé avec cet email.';
-      $loginError.textContent = msg;
-      $btnLogin.disabled = false;
-      $btnLogin.textContent = 'Se connecter';
-    });
+  FJKM_SB.auth.signInWithPassword({
+    email: $email.value.trim(),
+    password: $pass.value
+  }).then(function (res) {
+    if (!res.error) return; // onAuthStateChange ouvre le tableau de bord
+    var m = (res.error.message || '').toLowerCase();
+    var msg = 'Email ou mot de passe incorrect.';
+    if (m.indexOf('rate limit') > -1 || m.indexOf('too many') > -1) msg = 'Trop de tentatives. Réessayez dans quelques minutes.';
+    if (m.indexOf('failed to fetch') > -1 || m.indexOf('network') > -1) msg = 'Erreur réseau. Vérifiez votre connexion internet.';
+    if (m.indexOf('email not confirmed') > -1) msg = 'Compte non confirmé : validez le lien reçu par email.';
+    $loginError.textContent = msg;
+    $btnLogin.disabled = false;
+    $btnLogin.textContent = 'Se connecter';
+  });
 });
 
 $btnLogout.addEventListener('click', function () {
-  auth.signOut();
+  FJKM_SB.auth.signOut();
   $dash.classList.add('hidden');
   $login.classList.remove('hidden');
 });
@@ -213,14 +220,15 @@ function buildPhotoGrid() {
 }
 
 function loadThumb(key) {
-  db.collection('photos').doc(key).get()
-    .then(function (doc) {
-      if (!doc.exists || !doc.data().url) return;
+  FJKM_SB.from('photos').select('url').eq('key', key).maybeSingle()
+    .then(function (res) {
+      if (res.error || !res.data || !res.data.url) return;
       var el = document.getElementById('thumb-' + key);
       if (!el) return;
       var img = document.createElement('img');
       img.className = 'photo-thumb';
-      img.src = doc.data().url;
+      // ?t= force le navigateur à recharger après un remplacement
+      img.src = res.data.url + '?t=' + Date.now();
       img.alt = key;
       el.parentNode.replaceChild(img, el);
     })
@@ -290,7 +298,7 @@ function selectFile(file) {
   reader.readAsDataURL(file);
 }
 
-// Upload vers Firebase Storage puis Firestore
+// Upload vers Supabase Storage puis enregistrement en base
 $btnUpload.addEventListener('click', function () {
   if (!currentFile || !currentPhotoKey) return;
 
@@ -299,51 +307,49 @@ $btnUpload.addEventListener('click', function () {
   $btnCancel.disabled = true;
   $modalClose.disabled = true;
   $progressWrap.classList.remove('hidden');
-  $progressBar.style.width = '0%';
-  $progressLabel.textContent = 'Préparation de l\'upload...';
+  // Le SDK Supabase v2 ne remonte pas la progression octet par
+  // octet : on affiche un état d'activité plutôt qu'un faux
+  // pourcentage. La barre passe à 100% une fois le fichier reçu.
+  $progressBar.style.width = '35%';
+  $progressLabel.textContent = 'Téléversement en cours...';
 
-  var ext = currentFile.name.split('.').pop().toLowerCase() || 'jpg';
-  var storagePath = 'photos/' + currentPhotoKey + '.' + ext;
-  var uploadTask = storage.ref(storagePath).put(currentFile);
+  var ext  = (currentFile.name.split('.').pop() || 'jpg').toLowerCase();
+  var path = currentPhotoKey + '.' + ext;   // le bucket s'appelle déjà « photos »
+  var key  = currentPhotoKey;
 
-  uploadTask.on('state_changed',
-    function (snapshot) {
-      var pct = Math.round(snapshot.bytesTransferred / snapshot.totalBytes * 100);
-      $progressBar.style.width = pct + '%';
-      $progressLabel.textContent = 'Téléversement... ' + pct + '%';
-    },
-    function (err) {
-      showToast('Erreur : ' + err.message, 'error');
-      $btnUpload.disabled = false;
-      $btnUpload.textContent = 'Uploader la photo';
-      $btnCancel.disabled = false;
-      $modalClose.disabled = false;
-    },
-    function () {
+  function fail(err) {
+    showToast('Erreur : ' + (err && err.message ? err.message : 'échec du téléversement'), 'error');
+    $btnUpload.disabled = false;
+    $btnUpload.textContent = 'Uploader la photo';
+    $btnCancel.disabled = false;
+    $modalClose.disabled = false;
+    $progressWrap.classList.add('hidden');
+  }
+
+  FJKM_SB.storage.from('photos')
+    .upload(path, currentFile, { upsert: true, contentType: currentFile.type })
+    .then(function (res) {
+      if (res.error) throw res.error;
+
+      $progressBar.style.width = '100%';
       $progressLabel.textContent = 'Enregistrement...';
-      uploadTask.snapshot.ref.getDownloadURL()
-        .then(function (url) {
-          return db.collection('photos').doc(currentPhotoKey).set({
-            url: url,
-            alt: currentPhotoKey,
-            updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-          });
-        })
-        .then(function () {
-          showToast('Photo mise à jour avec succès !', 'success');
-          loadThumb(currentPhotoKey);
-          closeModal();
-        })
-        .catch(function (err) {
-          showToast('Erreur lors de la sauvegarde : ' + err.message, 'error');
-          $btnUpload.disabled = false;
-          $btnUpload.textContent = 'Uploader la photo';
-          $btnCancel.disabled = false;
-          $modalClose.disabled = false;
-        });
-    }
-  );
+
+      var pub = FJKM_SB.storage.from('photos').getPublicUrl(path);
+      return FJKM_SB.from('photos').upsert({
+        key: key,
+        url: pub.data.publicUrl,
+        alt: key,
+        updated_at: new Date().toISOString()
+      });
+    })
+    .then(function (res) {
+      if (res && res.error) throw res.error;
+      showToast('Photo mise à jour avec succès !', 'success');
+      loadThumb(key);
+      closeModal();
+    })
+    .catch(fail);
 });
 
 // ── Démarrage ─────────────────────────────────────────────
-window.addEventListener('load', initFirebase);
+window.addEventListener('load', initSupabase);

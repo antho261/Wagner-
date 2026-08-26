@@ -1,37 +1,51 @@
 // =========================================
 // FJKM Wagner – Chargeur de photos dynamiques
 // =========================================
-// Lit les URLs depuis Firestore (collection "photos")
-// et les applique à tous les éléments [data-photo-key].
-// Si Firebase n'est pas configuré ou hors ligne,
-// les photos originales (attribut src / style CSS)
-// restent affichées — aucun message d'erreur visible.
+// Lit les URLs depuis la table Supabase « photos » et les
+// applique à tous les éléments [data-photo-key].
+//
+// Si Supabase n'est pas configuré ou hors ligne, les photos
+// d'origine (attribut src / background CSS) restent
+// affichées — aucun message d'erreur visible.
+//
+// Une seule requête pour toute la page : l'ancienne version
+// Firestore lisait un document par clé, soit jusqu'à 17
+// allers-retours sur notre-eglise.html.
 // =========================================
 
 (function () {
-  if (typeof firebase === 'undefined') return;
-
-  var db;
-  try { db = firebase.firestore(); } catch (e) { return; }
+  if (!window.FJKM_SB) return;
 
   var elements = document.querySelectorAll('[data-photo-key]');
   if (!elements.length) return;
 
+  var keys = [];
   elements.forEach(function (el) {
-    var key = el.dataset.photoKey;
-    db.collection('photos').doc(key).get()
-      .then(function (doc) {
-        if (!doc.exists) return;
-        var data = doc.data();
-        if (!data || !data.url) return;
+    var k = el.dataset.photoKey;
+    if (k && keys.indexOf(k) === -1) keys.push(k);
+  });
+  if (!keys.length) return;
+
+  FJKM_SB.from('photos')
+    .select('key,url,alt')
+    .in('key', keys)
+    .then(function (res) {
+      if (res.error || !res.data) return;
+
+      var byKey = {};
+      res.data.forEach(function (row) { byKey[row.key] = row; });
+
+      elements.forEach(function (el) {
+        var row = byKey[el.dataset.photoKey];
+        if (!row || !row.url) return;
 
         if (el.tagName === 'IMG') {
-          el.src = data.url;
-          if (data.alt) el.alt = data.alt;
+          el.src = row.url;
+          if (row.alt) el.alt = row.alt;
         } else {
-          el.style.backgroundImage = "url('" + data.url.replace(/'/g, "\\'") + "')";
+          el.style.backgroundImage = "url('" + row.url.replace(/'/g, "\\'") + "')";
         }
-      })
-      .catch(function () { /* fallback silencieux */ });
-  });
+      });
+    })
+    .catch(function () { /* repli silencieux */ });
 })();
