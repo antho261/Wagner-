@@ -13,8 +13,8 @@
 // Ne mettez JAMAIS la clé « service_role » ici.
 // =========================================
 
-var FJKM_SUPABASE_URL      = 'VOTRE_PROJECT_URL';
-var FJKM_SUPABASE_ANON_KEY = 'VOTRE_ANON_KEY';
+var FJKM_SUPABASE_URL      = 'https://rpxilsqfnyaxyxconidb.supabase.co';
+var FJKM_SUPABASE_ANON_KEY = 'sb_publishable_G7-J30sqj7eQO66YwdCvqA_TBzEf8hi';
 
 // Client partagé par le site et le panneau d'administration.
 // Nommé FJKM_SB pour ne pas masquer « supabase », qui est le
