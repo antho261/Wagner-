@@ -62,6 +62,85 @@
     }
   ];
 
+  /* ═══ Sampana ═══
+     Source unique pour le menu déroulant desktop et la
+     feuille mobile. Les libellés reprennent ceux des
+     cartes de sections.html, dans le même ordre. */
+  var SAMPANA_HREF = pages + 'sections.html';
+
+  var SAMPANA = [
+    { href: pages + 'safif.html',          acr: 'SAFIF',
+      fr: 'Réveil Spirituel',        en: 'Spiritual Revival',      mg: 'Fifohazana' },
+    { href: pages + 'stk.html',            acr: 'STK',
+      fr: 'Jeunesse Chrétienne',     en: 'Christian Youth',        mg: 'Tanora Kristiana' },
+    { href: pages + 'slk.html',            acr: 'SLK',
+      fr: 'Hommes Chrétiens',        en: 'Christian Men',          mg: 'Lehilahy Kristiana' },
+    { href: pages + 'sampaty.html',        acr: 'SAMPATY',
+      fr: 'Scoutisme FJKM',          en: 'FJKM Scouting',          mg: 'Mpanazava sy Tily' },
+    { href: pages + 'sekoly-alahady.html', acr: 'SEKOLY',
+      fr: 'École du Dimanche',       en: 'Sunday School',          mg: 'Sekoly Alahady' },
+    { href: pages + 'vfl.html',            acr: 'VFL',
+      fr: 'Groupe des Laïcs',        en: 'Lay Foundation Group',   mg: 'Fototra Laika' },
+    { href: pages + 'dorkasy.html',        acr: 'DORKASY',
+      fr: 'Entraide & Action Sociale', en: 'Charity & Social Action', mg: 'Asa Fiantrana' }
+  ];
+
+  /* Feuille de traduction : sans enfant, donc applyLang()
+     la reprend telle quelle aux changements de langue. */
+  function langSpan(cls, it) {
+    var s = document.createElement('span');
+    s.className = cls;
+    s.setAttribute('data-fr', it.fr);
+    s.setAttribute('data-en', it.en);
+    s.setAttribute('data-mg', it.mg);
+    s.textContent = it.fr;
+    return s;
+  }
+
+  /* applyLang() a déjà tourné quand ce script s'exécute :
+     on aligne ce qu'on vient d'injecter sur la langue en cours. */
+  function syncLang(scope) {
+    var lang = document.documentElement.getAttribute('data-lang') || 'fr';
+    if (lang === 'fr') return;
+    scope.querySelectorAll('[data-fr]').forEach(function (el) {
+      if (el.children.length === 0) {
+        el.textContent = el.getAttribute('data-' + lang) || el.getAttribute('data-fr');
+      }
+    });
+  }
+
+  function sampanaLink(s, itemClass, acrClass, nameClass) {
+    var a = document.createElement('a');
+    a.className = itemClass;
+    a.href = s.href;
+    if (s.href.split('/').pop().toLowerCase() === file) {
+      a.setAttribute('aria-current', 'page');
+    }
+    var acr = document.createElement('span');
+    acr.className = acrClass;
+    acr.textContent = s.acr;
+    a.appendChild(acr);
+    a.appendChild(langSpan(nameClass, s));
+    return a;
+  }
+
+  /* Première entrée des deux menus : la page sections elle-même,
+     pour qu'un seul geste y mène encore. */
+  function allSectionsLink(itemClass, nameClass) {
+    var a = document.createElement('a');
+    a.className = itemClass + ' ' + itemClass + '-all';
+    a.href = SAMPANA_HREF;
+    a.appendChild(langSpan(nameClass, {
+      fr: 'Toutes les sections', en: 'All groups', mg: 'Ny sampana rehetra'
+    }));
+    var arrow = document.createElement('span');
+    arrow.setAttribute('aria-hidden', 'true');
+    arrow.className = 'nav-sub-arrow';
+    arrow.textContent = '→';
+    a.appendChild(arrow);
+    return a;
+  }
+
   function mount() {
     if (document.getElementById('mnav')) return;
 
@@ -94,22 +173,185 @@
       label.textContent = it.fr;
       a.appendChild(label);
 
+      /* L'onglet « Sections » ouvre la feuille des sampana
+         au lieu de naviguer : la page sections.html reste
+         accessible par la première entrée de la feuille. */
+      if (it.key === 'sections') {
+        a.setAttribute('aria-haspopup', 'dialog');
+        a.setAttribute('aria-expanded', 'false');
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          openSheet(a);
+        });
+      }
+
       bar.appendChild(a);
     });
 
     nav.appendChild(bar);
     document.body.appendChild(nav);
 
-    /* Le JS de la page a pu déjà passer applyLang() : on aligne
-       les libellés sur la langue courante. Les changements
-       ultérieurs sont pris en charge par applyLang(), qui
-       requête le DOM à chaque appel. */
-    var lang = document.documentElement.getAttribute('data-lang') || 'fr';
-    if (lang !== 'fr') {
-      bar.querySelectorAll('.mnav-label').forEach(function (el) {
-        el.textContent = el.getAttribute('data-' + lang) || el.getAttribute('data-fr');
-      });
+    syncLang(bar);
+  }
+
+  /* ── Mobile : feuille des sampana au-dessus de la barre ── */
+  var sheet = null;
+  var sheetOpener = null;
+
+  function buildSheet() {
+    if (sheet) return sheet;
+
+    sheet = document.createElement('div');
+    sheet.className = 'mnav-sheet';
+    sheet.id = 'mnavSheet';
+    sheet.setAttribute('role', 'dialog');
+    sheet.setAttribute('aria-modal', 'true');
+    sheet.setAttribute('aria-label', 'Sampana');
+
+    var back = document.createElement('div');
+    back.className = 'mnav-sheet-backdrop';
+    back.addEventListener('click', closeSheet);
+
+    var panel = document.createElement('div');
+    panel.className = 'mnav-sheet-panel';
+
+    var grip = document.createElement('span');
+    grip.className = 'mnav-sheet-grip';
+    grip.setAttribute('aria-hidden', 'true');
+    panel.appendChild(grip);
+
+    var title = document.createElement('div');
+    title.className = 'mnav-sheet-title';
+    title.setAttribute('data-fr', 'Sections');
+    title.setAttribute('data-en', 'Groups');
+    title.setAttribute('data-mg', 'Sampana');
+    title.textContent = 'Sections';
+    panel.appendChild(title);
+
+    panel.appendChild(allSectionsLink('mnav-sheet-item', 'mnav-sheet-name'));
+    SAMPANA.forEach(function (s) {
+      panel.appendChild(
+        sampanaLink(s, 'mnav-sheet-item', 'mnav-sheet-acr', 'mnav-sheet-name'));
+    });
+
+    sheet.appendChild(back);
+    sheet.appendChild(panel);
+    document.body.appendChild(sheet);
+    syncLang(sheet);
+
+    /* Échap attaché ici, pas dans mountDesktopMenu() : celui-ci
+       sort tôt sur les pages légales (pas de .nav-links), où la
+       feuille peut pourtant s'ouvrir. Sans ça elle n'y était
+       fermable qu'au clic sur le fond. */
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeSheet();
+    });
+
+    return sheet;
+  }
+
+  function openSheet(opener) {
+    var el = buildSheet();
+    sheetOpener = opener || null;
+
+    var done = false;
+    function reveal() {
+      if (done) return;
+      done = true;
+      /* Verrou et ouverture ensemble : posé avant, le verrou
+         restait seul si rAF ne tournait pas — page bloquée en
+         défilement, sans feuille visible ni moyen de fermer. */
+      document.body.classList.add('mnav-sheet-lock');
+      el.classList.add('open');
+      if (sheetOpener) sheetOpener.setAttribute('aria-expanded', 'true');
+      var first = el.querySelector('.mnav-sheet-item');
+      if (first) first.focus();
     }
+
+    /* Deux frames : la transition part bien de l'état fermé.
+       Minuteur de secours si rAF est gelé (onglet en arrière-plan). */
+    requestAnimationFrame(function () { requestAnimationFrame(reveal); });
+    setTimeout(reveal, 120);
+  }
+
+  function closeSheet() {
+    if (!sheet || !sheet.classList.contains('open')) return;
+    sheet.classList.remove('open');
+    document.body.classList.remove('mnav-sheet-lock');
+    if (sheetOpener) {
+      sheetOpener.setAttribute('aria-expanded', 'false');
+      sheetOpener.focus();
+      sheetOpener = null;
+    }
+  }
+
+  /* ── Desktop : « Section » devient un menu déroulant ── */
+  function mountDesktopMenu() {
+    var navLinks = document.querySelector('.nav-links');
+    if (!navLinks || document.getElementById('navSampana')) return;
+
+    var trigger = null;
+    var anchors = navLinks.querySelectorAll('a');
+    for (var i = 0; i < anchors.length; i++) {
+      if (/sections\.html/i.test(anchors[i].getAttribute('href') || '')) {
+        trigger = anchors[i];
+        break;
+      }
+    }
+    /* Les pages légales n'ont pas ce lien : rien à faire. */
+    if (!trigger || trigger.parentNode.tagName !== 'LI') return;
+
+    var li = trigger.parentNode;
+    li.classList.add('nav-has-sub');
+
+    var toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'nav-sub-toggle';
+    toggle.setAttribute('aria-controls', 'navSampana');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Sampana');
+    toggle.innerHTML =
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<path d="m6 9 6 6 6-6"/></svg>';
+    li.appendChild(toggle);
+
+    var sub = document.createElement('ul');
+    sub.className = 'nav-sub';
+    sub.id = 'navSampana';
+
+    function row(node) {
+      var wrap = document.createElement('li');
+      wrap.appendChild(node);
+      sub.appendChild(wrap);
+    }
+    row(allSectionsLink('nav-sub-item', 'nav-sub-name'));
+    SAMPANA.forEach(function (s) {
+      row(sampanaLink(s, 'nav-sub-item', 'nav-sub-acr', 'nav-sub-name'));
+    });
+
+    li.appendChild(sub);
+    syncLang(sub);
+
+    function closeMenu() {
+      li.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var open = li.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    li.addEventListener('mouseleave', closeMenu);
+    document.addEventListener('click', function (e) {
+      if (li.classList.contains('open') && !li.contains(e.target)) closeMenu();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      closeMenu();
+      closeSheet();
+    });
   }
 
   /* ── Réglages langue & thème repliés ──
@@ -161,7 +403,7 @@
     });
   }
 
-  function init() { mount(); mountSettings(); }
+  function init() { mount(); mountSettings(); mountDesktopMenu(); }
 
   if (document.body) init();
   else document.addEventListener('DOMContentLoaded', init);
