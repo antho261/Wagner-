@@ -3,7 +3,7 @@
    Base & Reset Styles
    ========================================= */
 
-@import url('variables.css?v=4');
+@import url('variables.css?v=12');
 
 *, *::before, *::after {
   box-sizing: border-box;
