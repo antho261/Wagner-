@@ -17,8 +17,6 @@ AddDefaultCharset UTF-8
   ExpiresByType image/jpeg "access plus 30 days"
   ExpiresByType image/png "access plus 30 days"
   ExpiresByType image/webp "access plus 30 days"
-  # Polices auto-hébergées : leur nom ne change jamais, cache long
-  ExpiresByType font/woff2 "access plus 1 year"
   ExpiresByType text/html "access plus 0 seconds"
 </IfModule>
 
