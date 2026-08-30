@@ -4,7 +4,7 @@
    (inspiré du mockup fourni)
    ========================================= */
 
-@import url('variables.css?v=13');
+@import url('variables.css?v=14');
 
 /* ── Variables page-spécifiques (palette bois/beige) ── */
 :root {
@@ -109,7 +109,7 @@ nav.scrolled {
 
 .hero-bg {
   position: absolute; inset: 0;
-  background: url('https://images.unsplash.com/photo-1438032005730-c779502df39b?w=1920&q=80') center/cover no-repeat;
+  background: url('../images/accueil-hero.jpg') center/cover no-repeat;
   opacity: .22;
   animation: hz 22s ease-in-out infinite alternate;
 }
@@ -330,7 +330,7 @@ body.theme-dark .event-date { color: var(--text-muted-dark); }
 .acces-bg {
   position: absolute; inset: 0; z-index: 0;
   background:
-    url('https://images.unsplash.com/photo-1597600159211-d6c104f408d1?w=1920&q=60') center/cover no-repeat;
+    url('../images/toerana-hero.jpg') center/cover no-repeat;
   filter: brightness(.18) saturate(.6);
 }
 #acces::after {

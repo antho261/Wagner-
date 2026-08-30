@@ -2,7 +2,7 @@
    FJKM Wagner – Contact
    ========================================= */
 
-@import url('variables.css?v=13');
+@import url('variables.css?v=14');
 
 /* ── Variables page-spécifiques ── */
 :root {
@@ -79,7 +79,7 @@ nav.scrolled {
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background: url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=1920&q=80') center/cover no-repeat;
+  background: url('../images/accueil-galerie-2.jpg') center/cover no-repeat;
   opacity: .22; animation: slowzoom 20s ease-in-out infinite alternate;
 }
 @keyframes slowzoom { from { transform: scale(1.05); } to { transform: scale(1.12); } }

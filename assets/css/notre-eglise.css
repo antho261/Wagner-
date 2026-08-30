@@ -2,7 +2,7 @@
    FJKM Wagner – Notre Église
    ========================================= */
 
-@import url('variables.css?v=13');
+@import url('variables.css?v=14');
 
 /* ── Variables page-spécifiques ── */
 :root {
@@ -157,7 +157,7 @@ nav.scrolled {
 
 .hero-bg {
   position: absolute; inset: 0;
-  background: url('https://images.unsplash.com/photo-1477672680933-0287a151330e?w=1920&q=80') center/cover no-repeat;
+  background: url('../images/toerana-lieu.jpg') center/cover no-repeat;
   opacity: .3;
   transform: scale(1.05);
   animation: slowzoom 20s ease-in-out infinite alternate;
